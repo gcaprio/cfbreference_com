@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+
+    {% regroup games|dictsort:"game_date" by game_date as games_by_date_list %}
+
+    Go to week:
+
+    <ul id="season_week_list">
+        {% for weeks_for_season in all_weeks_for_season %}
+            <li>
+                {% if weeks_for_season == current_week %}
+                    {{ weeks_for_season.week_num }}
+                {% else %}
+                    <a href="{{ weeks_for_season.week_games_url }}">{{ weeks_for_season.week_num }}</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr/>
+
+    <h2>Games for Week {{ current_week.week_num }}, {{ season }}</h2>
+
+    {% for date in games_by_date_list %}
+        <h3>{{ date.grouper|naturalday:"F d, Y"|capfirst }}</h3>
+        <table>
+            <th>Date</th>
+            <th>Team</th>
+            <th>Opponent</th>
+            <th>Location</th>
+            <th>Result</th>
+            <th>Score</th>
+
+            {% for item in date.list %}
+                <tr>
+                    <td>{{ item.game.date|date:"F d, Y" }}</td>
+                    <td>
+                        <a href="{{ item.game.team1.get_absolute_url }}">{{ item.game.team1.college.name }}</a> {{ item.game.team1.record }}
+                    </td>
+                    <td>{% if item.game.team2.college.updated %}<a
+                            href="{{ item.game.team2.get_absolute_url }}">{% endif %}{{ item.game.team2.college.name }}{% if item.game.team2.college.updated %}</a> {{ item.game.team2.record }}{% endif %}
+                    </td>
+                    <td>{{ item.game.get_t1_game_type_display }}</td>
+                    <td>{% if item.game.t1_result %}<a
+                            href="{{ item.game.get_absolute_url }}">{{ item.game.get_t1_result_display }}</a>{% else %}{% endif %}
+                    </td>
+                    <td>{% if item.game.t1_result %}<a
+                            href="{{ item.game.get_absolute_url }}">{{ item.game.team1_score }}-{{ item.game.team2_score }}</a>{% else %}{% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+{% endblock %}

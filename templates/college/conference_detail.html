@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}College Football Reference: {{ conference.name }}{% endblock %}
+
+{% block content %}
+
+<h3>{{ conference.name }} - {{ season }}</h3>
+
+<table>
+    <th>Team</th><th>State</th>
+    {% for team in team_list %}
+    <tr><td><a href="{{ team.get_absolute_url }}">{{ team.college.name }}</a></td><td>{{ team.college.state }}</td></tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

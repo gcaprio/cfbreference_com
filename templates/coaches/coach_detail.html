@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load charts %}
+
+{% block title %}College Football Reference: {{ coach.full_name }}{% endblock %}
+
+{% block content %}
+
+<h1>{{ coach.full_name }}</h1>
+
+{% if coach.current_job %}
+<h4>Current School: <a href="{{ coach.current_school.get_absolute_url }}">{{ coach.current_school.name }}</a> ({{ coach.seasons_at_current_school|ordinal }} season since 2000)</h4>
+{% if coach.current_job.start_date %}Start date: {{ coach.current_job.start_date|date:"F d, Y" }}{% endif %}
+{% endif %}
+
+<h4>Alma Mater: <a href="{{ coach.college.get_absolute_url }}">{{ coach.college }}</a> {% if coach.grad_year %}{{ coach.grad_year }}{% endif %}</h4>
+
+{% if college_list %}
+<h3>College Coaching History (2000-present)</h3>
+<table>
+  <th>School</th><th>Job(s)</th><th>Season</th><th>Record</th><th>Start Date</th><th>End Date</th>
+    {% for school in college_list %}
+    <tr><td><a href="{{ school.collegeyear.college.get_absolute_url }}">{{ school.collegeyear.college.name }}</a></td><td>{{ school.jobs_display }}</td><td>{{ school.collegeyear.season }}</td><td>{{ school.collegeyear.record }}</td><td>{{ school.start_date|date:"F d, Y" }}</td><td>{{ school.end_date|date:"F d, Y" }}</td></tr>
+    {% endfor %}
+</table>
+{% else %}
+{% endif %}
+
+{% if mapdata %}
+
+<h3>States Coached in Since 2000</h3>
+  {% chart %}
+    {% chart-size "440x220" %}
+    {% chart-background "000000" %}
+    {% chart-type "map" %}
+    {% chart-map-area "usa" %}
+    {% chart-map-data mapdata %}
+    {% chart-colors "EFEFEF" "76A4FB" "333333" %}
+  {% endchart %}
+
+<h3>Coaches {{ coach.full_name }} Has Worked With</h3>
+
+<form action="." method="post">{% csrf_token %}
+    {{ form.as_p }}
+  <input type="submit" value="Submit" />
+</form>
+
+{% endif %}
+
+<h3>{{ coach.full_name }} vs.: <a href="{% url coach_vs coach.slug %}">Head-to-Head Records</a></h3>
+
+{% endblock %}

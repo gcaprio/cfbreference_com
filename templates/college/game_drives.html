@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block title %}College Football Reference: {{ team_1.name }} vs. {{ team_2.name }} - Drives{% endblock %}
+
+{% block content %}
+
+{% if game %}
+
+<h3><a href="{{ team_1.get_absolute_url }}">{{ team_1.college.name }}</a> vs. <a href="{{ team_2.get_absolute_url }}">{{ team_2.college.name }}</a>: {{ game.season }}</h3>
+(<a href="{{ game.get_matchup_url }}">See all games between these teams</a>)
+
+<table>
+  <th>Season</th><th>Date</th><th>Outcome</th><th>Location</th>{% if game.attendance %}<th>Attendance</th>{% endif %}
+  <tr><td>{{ game.season }}</td><td>{{ game.date|date:"N d, Y" }}</td><td>{{ game.get_t1_result_display }}, {{ game.team1_score }}-{{ game.team2_score }}</td><td>{{ game.get_t1_game_type_display }} {% if game.site %}({{ game.site }}){% endif %}</td>{% if game.attendance %}<td>{{ game.attendance|intcomma }}</td>{% endif %}</tr>
+
+</table>
+
+{% if drives %}
+<h4>{{ team_1.name }} Drive Details</h4>
+<table>
+  <th>Quarter</th><th>Start Time</th><th>Start Position</th><th>Plays</th><th>Outcome</th><th>End Position</th><th>Time of Possession</th>
+  {% for drive in drives %}
+  <tr><td>{{ drive.quarter }}</td><td>{{ drive.start_time|time:"i:s" }}</td><td>{{ drive.get_start_side_display }} {{ drive.start_position }}</td><td>{{ drive.plays }}</td><td>{{ drive.end_result.name }}</td><td>{% if drive.end_position %}{{ drive.get_end_side_display }} {{ drive.end_position }}{% endif %}</td><td>{{ drive.time_of_possession|time:"i:s" }}</td></tr>
+  {% endfor %}
+</table>
+
+<img src="http://web1.ncaa.org/d1mfb/servlet/driveSummary.gif?acadyr={{ game.season }}&H={{ team_1.college.id }}&V={{ team_2.college.id }}&date={{ game.date|date:"d-b-y"|upper }}">
+<br />
+{% endif %}
+
+(<a href="{{ game.get_reverse_url }}drives/">see {{ team_2.college.name }}'s drives</a> for this game)
+
+
+{% else %}
+
+No game could be found.
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}College Football Reference: {{ team_1.name }} vs. {{ team_2.name }}{% endblock %}
+
+{% block content %}
+
+{% if games %}
+
+<h3><a href="{{ team_1.get_absolute_url }}">{{ team_1.name }}</a> vs. <a href="{{ team_2.get_absolute_url }}">{{ team_2.name }}</a></h3>
+
+{% if outcome %}
+
+<h4>{{ team_1.name }} {{ outcome.title }} Since 1988</h4>
+
+{% else %}
+<h4>Record against {{ team_2.name }} since 1988: <a href="wins/">{{ wins }}</a>-<a href="losses/">{{ losses }}</a>{% ifnotequal ties 0 %}-<a href="ties/">{{ ties }}</a>{% endifnotequal %}</h4>
+
+{% if last_home_loss %}Last home loss against {{ team_2.name }}: {{ last_home_loss.date|date:"F d, Y" }}<br />{% endif %}
+{% if last_road_win %}Last road win against {{ team_2.name }}: {{ last_road_win.date|date:"F d, Y" }}{% endif %}{% endif %}
+
+<table>
+  <th>Season</th><th>Outcome</th><th>Location</th>
+  {% for game in games %}
+  <tr><td><a href="{{ team_1.get_absolute_url }}{{ game.season }}/">{{ game.season }}</a></td><td>{% if game.t1_result %}{{ game.get_t1_result_display }}, {{ game.team1_score }}-{{ game.team2_score }} (<a href="{{ game.get_absolute_url }}">see details</a>){% else %}{{ game.date|date:"F d, Y" }}{% endif %}</td><td>{% ifequal game.t1_game_type 'N' %}{{ game.site }}{% else %}{{ game.get_t1_game_type_display }}{% endifequal %}</td></tr>
+  {% endfor %}
+</table>
+
+{% else %}
+
+{{ team_1.name }} has not played that team.
+
+{% endif %}
+
+{% endblock %}

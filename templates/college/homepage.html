@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+<h3>Welcome to College Football Reference</h3>
+
+Tracking {{ teams }} teams and {{ games|intcomma }} games.
+
+<h4>Recent Games</h4>
+
+<ul>
+{% for game in latest_games %}
+
+<li><a href="{{ game.get_absolute_url }}">{{ game.display }}</a> - {{ game.date|date:"F d, Y" }}</li>
+
+{% endfor %}
+</ul>
+
+{% if upcoming_week %}
+<h4>Current Week: {{ upcoming_week.week_num }} <a href="{{ upcoming_week.week_games_url }}">Schedule</a></h4>
+{% else %}
+<h4>Season Concluded</h4>
+{% endif %}
+
+<h4><a href="/teams/undefeated/2010/">Undefeated Teams</a></h4>
+
+{% endblock %}

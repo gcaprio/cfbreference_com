@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+{% load charts %}
+
+{% block title %}College Football Reference: {{ team_1.college.name }} vs. {{ team_2.college.name }}, {{ game.date.year }}{% endblock %}
+
+{% block content %}
+
+{% if game %}
+
+<h3><a href="{{ team_1.get_absolute_url }}">{{ team_1.college.name }}</a> vs. <a
+        href="{{ team_2.get_absolute_url }}">{{ team_2.college.name }}</a>: {{ game.season }}</h3>
+
+{% if conf %}<h4>{{ conf.name }} game</h4>{% endif %}
+
+<h4><a href="{{ game.get_reverse_url }}">See {{ team_2.college.name }}'s stats</a> for this game, or <a
+        href="{{ game.get_matchup_url }}">all games between these teams</a></h4>
+
+<table>
+    <th>Season</th>
+    <th>Date</th>
+    <th>Outcome</th>
+    <th>Location</th>{% if game.attendance %}
+    <th>Attendance</th>{% endif %}
+    <tr>
+        <td>{{ game.season }}</td>
+        <td>{{ game.date|date:"N d, Y" }}</td>
+        <td>{{ game.get_t1_result_display }}, {{ game.team1_score }}-{{ game.team2_score }} {% if game.overtime %}{{ game.overtime }}{% endif %}</td>
+        <td>{{ game.get_t1_game_type_display }} {% if game.site %}({{ game.site }}
+            ){% endif %}</td>{% if game.attendance %}
+        <td>{{ game.attendance|intcomma }}</td>{% endif %}</tr>
+
+</table>
+
+
+<div class="story first">
+    {% if offense %}
+
+    <h3>{{ team_1.name }} Offensive Stats</h3>
+    
+    {% if first_downs %}
+
+      <h5>First downs</h5>
+          {% chart %}
+              {% chart-data first_downs %}
+              {% chart-size "200x100" %}
+              {% chart-background "000000" %}
+              {% chart-type "pie" %}
+              {% chart-labels "Rush" "Pass" "Flag" %}
+              {% chart-alt "First downs" %}
+          {% endchart %}
+    {% endif %}
+    <ul>
+        <li>First downs: {{ offense.first_downs_total }} ({{ offense.first_downs_rushing }}
+            rushing, {{ offense.first_downs_passing }} passing, {{ offense.first_downs_penalty }} penalties)
+        </li>
+        <li>Third downs: {{ offense.third_down_conversions }}/{{ offense.third_down_attempts }}</li>
+        <li>Fourth downs: {{ offense.fourth_down_conversions }}/{{ offense.fourth_down_attempts }}</li>
+        <li>Rushing: {{ offense.rushes }} rushes for {{ offense.rush_net }} net yards and {{ offense.rush_touchdowns }}
+            touchdowns.
+        </li>
+        <li>Passing: {{ offense.pass_completions }} of {{ offense.pass_attempts }} for {{ offense.pass_yards }} yards
+            and {{ offense.pass_touchdowns }} touchdowns.
+        </li>
+
+    </ul>
+
+    <h4>See <a href="{{ game.get_absolute_url }}drives/">drive details</a>.</h4>
+
+    {% endif %}
+
+    {% if player_rushing %}
+        <h3>{{ team_1.name }} Rushing</h3>
+        <table>
+            <th>Player</th>
+            <th>Rushes</th>
+            <th>Net Yards</th>
+            <th>Long</th>
+            <th>Average</th>
+            <th>TD</th>
+            {% for player in player_rushing %}
+                <tr>
+                    <td>
+                        <a href="{{ player.player.get_absolute_url }}">{{ player.player.name }}, {{ player.player.position.abbrev }}</a>
+                    </td>
+                    <td>{{ player.rushes }}</td>
+                    <td>{{ player.net }}</td>
+                    <td>{{ player.long_yards }}</td>
+                    <td>{{ player.average }}</td>
+                    <td>{{ player.td }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if player_passing %}
+        <h3>{{ team_1.name }} Passing</h3>
+        <table>
+            <th>Player</th>
+            <th>Comp.-Att.</th>
+            <th>Yards</th>
+            <th>Int.</th>
+            <th>TD</th>
+            <th>Pass Eff.</th>
+            {% for player in player_passing %}
+                <tr>
+                    <td>
+                        <a href="{{ player.player.get_absolute_url }}">{{ player.player.name }}, {{ player.player.position.abbrev }}</a>
+                    </td>
+                    <td>{{ player.completions }}-{{ player.attempts }}</td>
+                    <td>{{ player.yards }}</td>
+                    <td>{{ player.interceptions }}</td>
+                    <td>{{ player.td }}</td>
+                    <td>{{ player.pass_efficiency }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if player_receiving %}
+        <h3>{{ team_1.name }} Receiving</h3>
+        <table>
+            <th>Player</th>
+            <th>Catches</th>
+            <th>Yards</th>
+            <th>Long</th>
+            <th>Average</th>
+            <th>TD</th>
+            {% for player in player_receiving %}
+                <tr>
+                    <td>
+                        <a href="{{ player.player.get_absolute_url }}">{{ player.player.name }}, {{ player.player.position.abbrev }}</a>
+                    </td>
+                    <td>{{ player.receptions }}</td>
+                    <td>{{ player.yards }}</td>
+                    <td>{{ player.long_yards }}</td>
+                    <td>{{ player.average }}</td>
+                    <td>{{ player.td }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</div>
+
+<div class="story">
+
+    {% if defense %}
+        <h3>{{ team_1.name }} Defensive Stats</h3>
+
+        <ul>
+            <li>Interceptions: {{ defense.defensive_interceptions }} for {{ defense.defensive_interception_yards }}
+                yards and {{ defense.defensive_interception_touchdowns }} touchdowns.
+            </li>
+            <li>Fumbles: {{ defense.fumbles_number }} for {{ defense.fumbles_yards }} yards
+                and {{ defense.fumbles_touchdowns }} touchdowns.
+            </li>
+        </ul>
+
+    {% endif %}
+
+    {% if player_tackles %}
+        <h3>{{ team_1.name }} Tackles</h3>
+        <table>
+            <th>Player</th>
+            <th>Unassisted</th>
+            <th>Assisted</th>
+            <th>Total</th>
+            {% for player in player_tackles %}
+                <tr>
+                    <td>
+                        <a href="{{ player.player.get_absolute_url }}">{{ player.player.name }}, {{ player.player.position.abbrev }}</a>
+                    </td>
+                    <td>{{ player.unassisted_tackles }}</td>
+                    <td>{{ player.assisted_tackles }}</td>
+                    <td>{{ player.total_tackles }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if player_tacklesloss %}
+        <h3>{{ team_1.name }} Tackles for Loss</h3>
+        <table>
+            <th>Player</th>
+            <th>Tackles for Loss</th>
+            <th>Yards</th>
+            <th>Sacks</th>
+            <th>Sack Yards</th>
+            {% for player in player_tacklesloss %}
+                <tr>
+                    <td>
+                        <a href="{{ player.player.get_absolute_url }}">{{ player.player.name }}, {{ player.player.position.abbrev }}</a>
+                    </td>
+                    <td>{{ player.total_tackles_for_loss }}</td>
+                    <td>{{ player.tackles_for_loss_yards }}</td>
+                    <td>{{ player.total_sacks }}</td>
+                    <td>{{ player.sack_yards }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+    {% if player_passdefense %}
+        <h3>{{ team_1.name }} Pass Defense</h3>
+        <table>
+            <th>Player</th>
+            <th>Interceptions</th>
+            <th>Int. Yards</th>
+            <th>TD</th>
+            <th>Pass Breakups</th>
+            {% for player in player_passdefense %}
+                <tr>
+                    <td>
+                        <a href="{{ player.player.get_absolute_url }}">{{ player.player.name }}, {{ player.player.position.abbrev }}</a>
+                    </td>
+                    <td>{{ player.interceptions }}</td>
+                    <td>{{ player.interception_yards }}</td>
+                    <td>{{ player.interception_td }}</td>
+                    <td>{{ player.pass_breakups }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</div>
+
+
+{% else %}
+
+No game could be found.
+
+{% endif %}
+
+{% endblock %}

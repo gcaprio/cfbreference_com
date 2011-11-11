@@ -1,0 +1,1532 @@
+<WORKSHEET>
+<LINKS>
+    <LINK>
+        <HRF>/mfb/scoreSummary.jsp&#63;acadyr=2010&#38;h=5&#38;v=1092&#38;date=11-SEP-10&#38;game=201000000000520100911
+        </HRF>
+        <DESC>Scoring</DESC>
+    </LINK>
+    <LINK>
+        <HRF>/mfb/driveSummary.jsp&#63;acadyr=2010&#38;h=5&#38;v=1092&#38;date=11-SEP-10&#38;game=201000000000520100911
+        </HRF>
+        <DESC>Drives/Play-by-Play</DESC>
+    </LINK>
+    <LINK>
+        <HRF>/mfb/fieldGoals.jsp&#63;acadyr=2010&#38;h=5&#38;v=1092&#38;date=11-SEP-10&#38;game=201000000000520100911
+        </HRF>
+        <DESC>Field Goals</DESC>
+    </LINK>
+</LINKS>
+<GAMEDATE>09/11/10</GAMEDATE>
+<REPORTDATE>09/19/10</REPORTDATE>
+<SCORE>
+    <VISITOR>
+        <NAME>Gardner-Webb</NAME>
+        <QUARTERS>
+            <QUARTER>
+                <NUMBER>1</NUMBER>
+                <SCORE>3</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>2</NUMBER>
+                <SCORE>14</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>3</NUMBER>
+                <SCORE>7</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>4</NUMBER>
+                <SCORE>7</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>5</NUMBER>
+                <SCORE>0</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>6</NUMBER>
+                <SCORE>7</SCORE>
+            </QUARTER>
+        </QUARTERS>
+        <TOTAL>38</TOTAL>
+    </VISITOR>
+    <HOME>
+        <NAME>Akron</NAME>
+        <QUARTERS>
+            <QUARTER>
+                <NUMBER>1</NUMBER>
+                <SCORE>14</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>2</NUMBER>
+                <SCORE>7</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>3</NUMBER>
+                <SCORE>10</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>4</NUMBER>
+                <SCORE>0</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>5</NUMBER>
+                <SCORE>6</SCORE>
+            </QUARTER>
+            <QUARTER>
+                <NUMBER>6</NUMBER>
+                <SCORE>0</SCORE>
+            </QUARTER>
+        </QUARTERS>
+        <TOTAL>37</TOTAL>
+    </HOME>
+</SCORE>
+<TEAMS>
+<HOME>
+<ORGID>5</ORGID>
+<THIRDDOWNS>
+    <ATT>12</ATT>
+    <CONV>6</CONV>
+</THIRDDOWNS>
+<FOURTHDOWNS>
+    <ATT>1</ATT>
+    <CONV>1</CONV>
+</FOURTHDOWNS>
+<TOP>29:34</TOP>
+<FIRSTDOWNS>
+    <RUSH>13</RUSH>
+    <PASS>8</PASS>
+    <PENALTY>1</PENALTY>
+    <TOTAL>22</TOTAL>
+</FIRSTDOWNS>
+<PENALTIES>
+    <NUMBER>5</NUMBER>
+    <YARDS>50</YARDS>
+</PENALTIES>
+<FUMBLES>
+    <NUMBER>3</NUMBER>
+    <LOST>1</LOST>
+</FUMBLES>
+<ATTENDANCE>10046</ATTENDANCE>
+<DURATION>3:15</DURATION>
+<PLAYERS>
+<PLAYER>
+    <UNIFORM>1</UNIFORM>
+    <NAME>Diamond Weaver</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <PASSDEFENSE>
+        <INTNUMBER>&#160;</INTNUMBER>
+        <INTYARDS>&#160;</INTYARDS>
+        <INTTD>&#160;</INTTD>
+        <PASSBREAKUPS>1</PASSBREAKUPS>
+    </PASSDEFENSE>
+    <STARTER dpos="BCB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>1C</UNIFORM>
+    <NAME>Marvase Byrd</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>2</UNIFORM>
+    <NAME>Jalil Carter</NAME>
+    <RETURNS>
+        <PUNTNUMBER>3</PUNTNUMBER>
+        <PUNTYARDS>79</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>&#160;</KONUMBER>
+        <KOYARDS>&#160;</KOYARDS>
+        <KOTD>&#160;</KOTD>
+    </RETURNS>
+    <TACKLES>
+        <UATACKLES>0</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>4</UNIFORM>
+    <NAME>Jared Province</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>3</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="FS">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>4A</UNIFORM>
+    <NAME>Igor Iveljic</NAME>
+    <SCORING>
+        <TD>&#160;</TD>
+        <OFFKICKATT>5</OFFKICKATT>
+        <OFFKICKMADE>4</OFFKICKMADE>
+        <OFFRPATT>0</OFFRPATT>
+        <OFFRPMADE>0</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>2</FGATT>
+        <FGMADE>1</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>7</PTS>
+    </SCORING>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>6</UNIFORM>
+    <NAME>Manley Waller</NAME>
+    <TACKLES>
+        <UATACKLES>6</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <PASSDEFENSE>
+        <INTNUMBER>1</INTNUMBER>
+        <INTYARDS>12</INTYARDS>
+        <INTTD>0</INTTD>
+        <PASSBREAKUPS>1</PASSBREAKUPS>
+    </PASSDEFENSE>
+    <STARTER dpos="FCB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>7</UNIFORM>
+    <NAME>Patrick Nicely</NAME>
+    <RUSHING>
+        <NUMBER>5</NUMBER>
+        <GAIN>2</GAIN>
+        <LOSS>6</LOSS>
+        <NET>-4</NET>
+        <TD>1</TD>
+        <LONG>2</LONG>
+        <AVG>-.8</AVG>
+        <TOTPLAYS>26</TOTPLAYS>
+        <TOTYARDS>161</TOTYARDS>
+    </RUSHING>
+    <PASSING>
+        <ATT>21</ATT>
+        <COMP>14</COMP>
+        <INT>1</INT>
+        <YARDS>165</YARDS>
+        <TD>1</TD>
+        <CONV>&#160;</CONV>
+        <TOTPLAYS>26</TOTPLAYS>
+        <TOTYARDS>161</TOTYARDS>
+        <PASSEFF>138.9</PASSEFF>
+    </PASSING>
+    <SCORING>
+        <TD>1</TD>
+        <OFFKICKATT>&#160;</OFFKICKATT>
+        <OFFKICKMADE>&#160;</OFFKICKMADE>
+        <OFFRPATT>&#160;</OFFRPATT>
+        <OFFRPMADE>&#160;</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>&#160;</FGATT>
+        <FGMADE>&#160;</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>6</PTS>
+    </SCORING>
+    <STARTER opos="QB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>8</UNIFORM>
+    <NAME>Shawn Lemon</NAME>
+    <TACKLES>
+        <UATACKLES>5</UATACKLES>
+        <ATACKLES>3</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>1</UATFL>
+        <ATFL>0</ATFL>
+        <TFLYARDS>2</TFLYARDS>
+        <UASACKS>1</UASACKS>
+        <ASACKS>0</ASACKS>
+        <SACKYARDS>2</SACKYARDS>
+    </TFL>
+    <STARTER dpos="DE">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>8A</UNIFORM>
+    <NAME>Zack Campbell</NAME>
+    <PUNT>
+        <NUMBER>3</NUMBER>
+        <YARDS>103</YARDS>
+        <TB>0</TB>
+        <INSIDE>2</INSIDE>
+        <AVG>34.3</AVG>
+    </PUNT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>9</UNIFORM>
+    <NAME>Gary Pride</NAME>
+    <RECEIVING>
+        <NUMBER>3</NUMBER>
+        <YARDS>33</YARDS>
+        <TD>0</TD>
+        <LONG>25</LONG>
+        <AVG>11</AVG>
+    </RECEIVING>
+    <STARTER opos="WR">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>9A</UNIFORM>
+    <NAME>Doug Richardson</NAME>
+    <TACKLES>
+        <UATACKLES>9</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>2</UATFL>
+        <ATFL>0</ATFL>
+        <TFLYARDS>7</TFLYARDS>
+        <UASACKS>1</UASACKS>
+        <ASACKS>0</ASACKS>
+        <SACKYARDS>6</SACKYARDS>
+    </TFL>
+    <PASSDEFENSE>
+        <INTNUMBER>&#160;</INTNUMBER>
+        <INTYARDS>&#160;</INTYARDS>
+        <INTTD>&#160;</INTTD>
+        <PASSBREAKUPS>1</PASSBREAKUPS>
+    </PASSDEFENSE>
+    <FUMBLES>
+        <FUMBLESFORCED>1</FUMBLESFORCED>
+        <FUMBLESNUMBER>&#160;</FUMBLESNUMBER>
+        <FUMBLESYARDS>&#160;</FUMBLESYARDS>
+        <FUMBLESTD>&#160;</FUMBLESTD>
+    </FUMBLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>10</UNIFORM>
+    <NAME>Alex Allen</NAME>
+    <RUSHING>
+        <NUMBER>20</NUMBER>
+        <GAIN>114</GAIN>
+        <LOSS>4</LOSS>
+        <NET>110</NET>
+        <TD>3</TD>
+        <LONG>33</LONG>
+        <AVG>5.5</AVG>
+        <TOTPLAYS>20</TOTPLAYS>
+        <TOTYARDS>110</TOTYARDS>
+    </RUSHING>
+    <RECEIVING>
+        <NUMBER>1</NUMBER>
+        <YARDS>4</YARDS>
+        <TD>0</TD>
+        <LONG>4</LONG>
+        <AVG>4</AVG>
+    </RECEIVING>
+    <SCORING>
+        <TD>3</TD>
+        <OFFKICKATT>&#160;</OFFKICKATT>
+        <OFFKICKMADE>&#160;</OFFKICKMADE>
+        <OFFRPATT>&#160;</OFFRPATT>
+        <OFFRPMADE>&#160;</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>&#160;</FGATT>
+        <FGMADE>&#160;</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>18</PTS>
+    </SCORING>
+    <STARTER opos="RB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>15</UNIFORM>
+    <NAME>Nate Burney</NAME>
+    <RUSHING>
+        <NUMBER>17</NUMBER>
+        <GAIN>119</GAIN>
+        <LOSS>0</LOSS>
+        <NET>119</NET>
+        <TD>0</TD>
+        <LONG>18</LONG>
+        <AVG>7</AVG>
+        <TOTPLAYS>17</TOTPLAYS>
+        <TOTYARDS>119</TOTYARDS>
+    </RUSHING>
+    <RETURNS>
+        <PUNTNUMBER>1</PUNTNUMBER>
+        <PUNTYARDS>26</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>&#160;</KONUMBER>
+        <KOYARDS>&#160;</KOYARDS>
+        <KOTD>&#160;</KOTD>
+    </RETURNS>
+    <TACKLES>
+        <UATACKLES>0</UATACKLES>
+        <ATACKLES>2</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>20</UNIFORM>
+    <NAME>Mike Thomas</NAME>
+    <TACKLES>
+        <UATACKLES>5</UATACKLES>
+        <ATACKLES>5</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="MIKE">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>21</UNIFORM>
+    <NAME>Broderick Alexander</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>24</UNIFORM>
+    <NAME>Giorgio Bowers</NAME>
+    <RETURNS>
+        <PUNTNUMBER>1</PUNTNUMBER>
+        <PUNTYARDS>15</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>&#160;</KONUMBER>
+        <KOYARDS>&#160;</KOYARDS>
+        <KOTD>&#160;</KOTD>
+    </RETURNS>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>25</UNIFORM>
+    <NAME>Micklos Blake</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>26</UNIFORM>
+    <NAME>Kevin Davis</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>2</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>0</UATFL>
+        <ATFL>1</ATFL>
+        <TFLYARDS>3</TFLYARDS>
+        <UASACKS>0</UASACKS>
+        <ASACKS>1</ASACKS>
+        <SACKYARDS>3</SACKYARDS>
+    </TFL>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>27</UNIFORM>
+    <NAME>Anthony Holmes</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>32</UNIFORM>
+    <NAME>ShelDon Miller</NAME>
+    <TACKLES>
+        <UATACKLES>0</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>0</UATFL>
+        <ATFL>1</ATFL>
+        <TFLYARDS>0</TFLYARDS>
+        <UASACKS>&#160;</UASACKS>
+        <ASACKS>&#160;</ASACKS>
+        <SACKYARDS>&#160;</SACKYARDS>
+    </TFL>
+    <STARTER dpos="SS">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>33</UNIFORM>
+    <NAME>Josh Richmond</NAME>
+    <TACKLES>
+        <UATACKLES>2</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>34</UNIFORM>
+    <NAME>Brian Wagner</NAME>
+    <TACKLES>
+        <UATACKLES>4</UATACKLES>
+        <ATACKLES>4</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>0</UATFL>
+        <ATFL>1</ATFL>
+        <TFLYARDS>1</TFLYARDS>
+        <UASACKS>&#160;</UASACKS>
+        <ASACKS>&#160;</ASACKS>
+        <SACKYARDS>&#160;</SACKYARDS>
+    </TFL>
+    <STARTER dpos="SAM">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>35</UNIFORM>
+    <NAME>Keith Sconiers</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>37</UNIFORM>
+    <NAME>Branko Rogovic</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>39</UNIFORM>
+    <NAME>Antoine Russell</NAME>
+    <RECEIVING>
+        <NUMBER>1</NUMBER>
+        <YARDS>7</YARDS>
+        <TD>0</TD>
+        <LONG>7</LONG>
+        <AVG>7</AVG>
+    </RECEIVING>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>40</UNIFORM>
+    <NAME>Austin Bailey</NAME>
+    <RECEIVING>
+        <NUMBER>1</NUMBER>
+        <YARDS>15</YARDS>
+        <TD>0</TD>
+        <LONG>15</LONG>
+        <AVG>15</AVG>
+    </RECEIVING>
+    <STARTER opos="FB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>42</UNIFORM>
+    <NAME>Nolan Plate</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>43</UNIFORM>
+    <NAME>Adam Steiner</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>45</UNIFORM>
+    <NAME>Joe Rash</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>49</UNIFORM>
+    <NAME>Matt Little</NAME>
+    <TACKLES>
+        <UATACKLES>2</UATACKLES>
+        <ATACKLES>4</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="WILL">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>56</UNIFORM>
+    <NAME>Almondo Sewell</NAME>
+    <TACKLES>
+        <UATACKLES>0</UATACKLES>
+        <ATACKLES>2</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="DT">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>58</UNIFORM>
+    <NAME>Nico Caponi</NAME>
+    <TACKLES>
+        <UATACKLES>0</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>60</UNIFORM>
+    <NAME>Dan Marcoux</NAME>
+    <TACKLES>
+        <UATACKLES>4</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>1</UATFL>
+        <ATFL>1</ATFL>
+        <TFLYARDS>6</TFLYARDS>
+        <UASACKS>0</UASACKS>
+        <ASACKS>1</ASACKS>
+        <SACKYARDS>4</SACKYARDS>
+    </TFL>
+    <STARTER dpos="DT">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>64</UNIFORM>
+    <NAME>Mitch Straight</NAME>
+    <STARTER opos="RG">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>69</UNIFORM>
+    <NAME>Patrick McCloskey</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>71</UNIFORM>
+    <NAME>Mike Ward</NAME>
+    <STARTER opos="C">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>72</UNIFORM>
+    <NAME>Zac Kasparek</NAME>
+    <STARTER opos="LG">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>73</UNIFORM>
+    <NAME>Jake Anderson</NAME>
+    <STARTER opos="RT">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>75</UNIFORM>
+    <NAME>Corey Woods</NAME>
+    <STARTER opos="LT">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>76</UNIFORM>
+    <NAME>Jarrod Pughsley</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>81</UNIFORM>
+    <NAME>Anthony Meriwether</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>82</UNIFORM>
+    <NAME>Jeremy LaFrance</NAME>
+    <RECEIVING>
+        <NUMBER>7</NUMBER>
+        <YARDS>88</YARDS>
+        <TD>1</TD>
+        <LONG>37</LONG>
+        <AVG>12.6</AVG>
+    </RECEIVING>
+    <RETURNS>
+        <PUNTNUMBER>&#160;</PUNTNUMBER>
+        <PUNTYARDS>&#160;</PUNTYARDS>
+        <PUNTTD>&#160;</PUNTTD>
+        <KONUMBER>2</KONUMBER>
+        <KOYARDS>15</KOYARDS>
+        <KOTD>0</KOTD>
+    </RETURNS>
+    <SCORING>
+        <TD>1</TD>
+        <OFFKICKATT>&#160;</OFFKICKATT>
+        <OFFKICKMADE>&#160;</OFFKICKMADE>
+        <OFFRPATT>&#160;</OFFRPATT>
+        <OFFRPMADE>&#160;</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>&#160;</FGATT>
+        <FGMADE>&#160;</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>6</PTS>
+    </SCORING>
+    <STARTER opos="WR">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>84</UNIFORM>
+    <NAME>Rhyne Ladrach</NAME>
+    <RECEIVING>
+        <NUMBER>1</NUMBER>
+        <YARDS>18</YARDS>
+        <TD>0</TD>
+        <LONG>18</LONG>
+        <AVG>18</AVG>
+    </RECEIVING>
+    <STARTER opos="TE">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>88</UNIFORM>
+    <NAME>Jerrod Dillard</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>93</UNIFORM>
+    <NAME>Richard Hall</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>96</UNIFORM>
+    <NAME>Hasan Hazime</NAME>
+    <TACKLES>
+        <UATACKLES>2</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="DE">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>97</UNIFORM>
+    <NAME>James Harvey</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>99</UNIFORM>
+    <NAME>Cowles Stewart</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>198</UNIFORM>
+    <NAME> Team</NAME>
+    <RUSHING>
+        <NUMBER>2</NUMBER>
+        <GAIN>0</GAIN>
+        <LOSS>1</LOSS>
+        <NET>-1</NET>
+        <TD>0</TD>
+        <LONG>0</LONG>
+        <AVG>-.5</AVG>
+        <TOTPLAYS>2</TOTPLAYS>
+        <TOTYARDS>-1</TOTYARDS>
+    </RUSHING>
+</PLAYER>
+</PLAYERS>
+<TOTALS>
+    <RUSHING>
+        <NUMBER>44</NUMBER>
+        <GAIN>235</GAIN>
+        <LOSS>11</LOSS>
+        <NET>224</NET>
+        <TD>4</TD>
+        <TOTPLAYS>65</TOTPLAYS>
+        <TOTYARDS>389</TOTYARDS>
+    </RUSHING>
+    <PASSING>
+        <ATT>21</ATT>
+        <COMP>14</COMP>
+        <INT>1</INT>
+        <YARDS>165</YARDS>
+        <TD>1</TD>
+        <CONV>&#160;</CONV>
+        <TOTPLAYS>65</TOTPLAYS>
+        <TOTYARDS>389</TOTYARDS>
+    </PASSING>
+    <RECEIVING>
+        <NUMBER>14</NUMBER>
+        <YARDS>165</YARDS>
+        <TD>1</TD>
+    </RECEIVING>
+    <PUNT>
+        <NUMBER>3</NUMBER>
+        <YARDS>103</YARDS>
+    </PUNT>
+    <RETURNS>
+        <PUNTNUMBER>5</PUNTNUMBER>
+        <PUNTYARDS>120</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>2</KONUMBER>
+        <KOYARDS>15</KOYARDS>
+        <KOTD>0</KOTD>
+    </RETURNS>
+    <SCORING>
+        <TD>5</TD>
+        <OFFKICKATT>5</OFFKICKATT>
+        <OFFKICKMADE>4</OFFKICKMADE>
+        <OFFRPATT>0</OFFRPATT>
+        <OFFRPMADE>0</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>2</FGATT>
+        <FGMADE>1</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>37</PTS>
+    </SCORING>
+    <TACKLES>
+        <UATACKLES>42</UATACKLES>
+        <ATACKLES>33</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>4</UATFL>
+        <ATFL>4</ATFL>
+        <TFLYARDS>19</TFLYARDS>
+        <UASACKS>&#160;</UASACKS>
+        <ASACKS>&#160;</ASACKS>
+        <SACKYARDS>15</SACKYARDS>
+    </TFL>
+    <PASSDEFENSE>
+        <INTNUMBER>1</INTNUMBER>
+        <INTYARDS>12</INTYARDS>
+        <INTTD>0</INTTD>
+        <PASSBREAKUPS>3</PASSBREAKUPS>
+    </PASSDEFENSE>
+    <FUMBLES>
+        <FUMBLESFORCED>1</FUMBLESFORCED>
+        <FUMBLESNUMBER>&#160;</FUMBLESNUMBER>
+        <FUMBLESYARDS>&#160;</FUMBLESYARDS>
+        <FUMBLESTD>&#160;</FUMBLESTD>
+    </FUMBLES>
+</TOTALS>
+</HOME>
+<VISITOR>
+<ORGID>1092</ORGID>
+<THIRDDOWNS>
+    <ATT>20</ATT>
+    <CONV>11</CONV>
+</THIRDDOWNS>
+<FOURTHDOWNS>
+    <ATT>1</ATT>
+    <CONV>1</CONV>
+</FOURTHDOWNS>
+<TOP>30:26</TOP>
+<FIRSTDOWNS>
+    <RUSH>8</RUSH>
+    <PASS>14</PASS>
+    <PENALTY>2</PENALTY>
+    <TOTAL>24</TOTAL>
+</FIRSTDOWNS>
+<PENALTIES>
+    <NUMBER>2</NUMBER>
+    <YARDS>30</YARDS>
+</PENALTIES>
+<FUMBLES>
+    <NUMBER>1</NUMBER>
+    <LOST>0</LOST>
+</FUMBLES>
+<ATTENDANCE>10046</ATTENDANCE>
+<DURATION>3:15</DURATION>
+<PLAYERS>
+<PLAYER>
+    <UNIFORM>1</UNIFORM>
+    <NAME>Nino Woolridge</NAME>
+    <RUSHING>
+        <NUMBER>9</NUMBER>
+        <GAIN>30</GAIN>
+        <LOSS>0</LOSS>
+        <NET>30</NET>
+        <TD>1</TD>
+        <LONG>15</LONG>
+        <AVG>3.3</AVG>
+        <TOTPLAYS>9</TOTPLAYS>
+        <TOTYARDS>30</TOTYARDS>
+    </RUSHING>
+    <SCORING>
+        <TD>1</TD>
+        <OFFKICKATT>&#160;</OFFKICKATT>
+        <OFFKICKMADE>&#160;</OFFKICKMADE>
+        <OFFRPATT>&#160;</OFFRPATT>
+        <OFFRPMADE>&#160;</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>&#160;</FGATT>
+        <FGMADE>&#160;</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>6</PTS>
+    </SCORING>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>2</UNIFORM>
+    <NAME>Lyndrez Leslie</NAME>
+    <TACKLES>
+        <UATACKLES>3</UATACKLES>
+        <ATACKLES>3</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="LB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>3</UNIFORM>
+    <NAME>John Rock</NAME>
+    <RUSHING>
+        <NUMBER>5</NUMBER>
+        <GAIN>10</GAIN>
+        <LOSS>12</LOSS>
+        <NET>-2</NET>
+        <TD>0</TD>
+        <LONG>6</LONG>
+        <AVG>-.4</AVG>
+        <TOTPLAYS>21</TOTPLAYS>
+        <TOTYARDS>90</TOTYARDS>
+    </RUSHING>
+    <PASSING>
+        <ATT>16</ATT>
+        <COMP>8</COMP>
+        <INT>1</INT>
+        <YARDS>92</YARDS>
+        <TD>1</TD>
+        <CONV>&#160;</CONV>
+        <TOTPLAYS>21</TOTPLAYS>
+        <TOTYARDS>90</TOTYARDS>
+        <PASSEFF>106.4</PASSEFF>
+    </PASSING>
+    <STARTER opos="QB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>5</UNIFORM>
+    <NAME> Sanders</NAME>
+    <RECEIVING>
+        <NUMBER>4</NUMBER>
+        <YARDS>44</YARDS>
+        <TD>0</TD>
+        <LONG>23</LONG>
+        <AVG>11</AVG>
+    </RECEIVING>
+    <RETURNS>
+        <PUNTNUMBER>1</PUNTNUMBER>
+        <PUNTYARDS>14</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>&#160;</KONUMBER>
+        <KOYARDS>&#160;</KOYARDS>
+        <KOTD>&#160;</KOTD>
+    </RETURNS>
+    <STARTER opos="WR">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>10</UNIFORM>
+    <NAME>Keenan Grissett</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>11</UNIFORM>
+    <NAME>Tyson Petty</NAME>
+    <RECEIVING>
+        <NUMBER>2</NUMBER>
+        <YARDS>2</YARDS>
+        <TD>0</TD>
+        <LONG>3</LONG>
+        <AVG>1</AVG>
+    </RECEIVING>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>12</UNIFORM>
+    <NAME>Chandler Browning</NAME>
+    <RUSHING>
+        <NUMBER>3</NUMBER>
+        <GAIN>4</GAIN>
+        <LOSS>7</LOSS>
+        <NET>-3</NET>
+        <TD>0</TD>
+        <LONG>2</LONG>
+        <AVG>-1</AVG>
+        <TOTPLAYS>30</TOTPLAYS>
+        <TOTYARDS>195</TOTYARDS>
+    </RUSHING>
+    <PASSING>
+        <ATT>27</ATT>
+        <COMP>17</COMP>
+        <INT>0</INT>
+        <YARDS>198</YARDS>
+        <TD>2</TD>
+        <CONV>&#160;</CONV>
+        <TOTPLAYS>30</TOTPLAYS>
+        <TOTYARDS>195</TOTYARDS>
+        <PASSEFF>149</PASSEFF>
+    </PASSING>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>13</UNIFORM>
+    <NAME>Bryce Nixon</NAME>
+    <TACKLES>
+        <UATACKLES>8</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <PASSDEFENSE>
+        <INTNUMBER>&#160;</INTNUMBER>
+        <INTYARDS>&#160;</INTYARDS>
+        <INTTD>&#160;</INTTD>
+        <PASSBREAKUPS>1</PASSBREAKUPS>
+    </PASSDEFENSE>
+    <STARTER dpos="CB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>14</UNIFORM>
+    <NAME>Keron Phelps</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>17</UNIFORM>
+    <NAME>James Perry III</NAME>
+    <RUSHING>
+        <NUMBER>2</NUMBER>
+        <GAIN>7</GAIN>
+        <LOSS>0</LOSS>
+        <NET>7</NET>
+        <TD>0</TD>
+        <LONG>7</LONG>
+        <AVG>3.5</AVG>
+        <TOTPLAYS>2</TOTPLAYS>
+        <TOTYARDS>7</TOTYARDS>
+    </RUSHING>
+    <RECEIVING>
+        <NUMBER>10</NUMBER>
+        <YARDS>125</YARDS>
+        <TD>2</TD>
+        <LONG>25</LONG>
+        <AVG>12.5</AVG>
+    </RECEIVING>
+    <SCORING>
+        <TD>2</TD>
+        <OFFKICKATT>&#160;</OFFKICKATT>
+        <OFFKICKMADE>&#160;</OFFKICKMADE>
+        <OFFRPATT>&#160;</OFFRPATT>
+        <OFFRPMADE>&#160;</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>&#160;</FGATT>
+        <FGMADE>&#160;</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>12</PTS>
+    </SCORING>
+    <STARTER opos="WR">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>19</UNIFORM>
+    <NAME>Jordan Woods</NAME>
+    <TACKLES>
+        <UATACKLES>2</UATACKLES>
+        <ATACKLES>2</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>1</UATFL>
+        <ATFL>0</ATFL>
+        <TFLYARDS>1</TFLYARDS>
+        <UASACKS>&#160;</UASACKS>
+        <ASACKS>&#160;</ASACKS>
+        <SACKYARDS>&#160;</SACKYARDS>
+    </TFL>
+    <STARTER dpos="DE">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>20</UNIFORM>
+    <NAME>Cedric McGowan</NAME>
+    <TACKLES>
+        <UATACKLES>3</UATACKLES>
+        <ATACKLES>3</ATACKLES>
+    </TACKLES>
+    <PASSDEFENSE>
+        <INTNUMBER>1</INTNUMBER>
+        <INTYARDS>17</INTYARDS>
+        <INTTD>0</INTTD>
+        <PASSBREAKUPS>&#160;</PASSBREAKUPS>
+    </PASSDEFENSE>
+    <STARTER dpos="CB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>21</UNIFORM>
+    <NAME>Josh Miller</NAME>
+    <RECEIVING>
+        <NUMBER>3</NUMBER>
+        <YARDS>62</YARDS>
+        <TD>0</TD>
+        <LONG>51</LONG>
+        <AVG>20.7</AVG>
+    </RECEIVING>
+    <STARTER opos="TE">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>22</UNIFORM>
+    <NAME>Terrance Thomas</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>23</UNIFORM>
+    <NAME>Courtney Roundtree</NAME>
+    <TACKLES>
+        <UATACKLES>5</UATACKLES>
+        <ATACKLES>2</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="SS">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>24</UNIFORM>
+    <NAME>Corey Phillips</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>26</UNIFORM>
+    <NAME>Kenny Rivers</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>28</UNIFORM>
+    <NAME>Sean Davis</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>30</UNIFORM>
+    <NAME>Bo Lindsey</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>32</UNIFORM>
+    <NAME>Juanne Blount</NAME>
+    <RUSHING>
+        <NUMBER>18</NUMBER>
+        <GAIN>71</GAIN>
+        <LOSS>2</LOSS>
+        <NET>69</NET>
+        <TD>1</TD>
+        <LONG>16</LONG>
+        <AVG>3.8</AVG>
+        <TOTPLAYS>18</TOTPLAYS>
+        <TOTYARDS>69</TOTYARDS>
+    </RUSHING>
+    <SCORING>
+        <TD>1</TD>
+        <OFFKICKATT>&#160;</OFFKICKATT>
+        <OFFKICKMADE>&#160;</OFFKICKMADE>
+        <OFFRPATT>&#160;</OFFRPATT>
+        <OFFRPMADE>&#160;</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>&#160;</FGATT>
+        <FGMADE>&#160;</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>6</PTS>
+    </SCORING>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+    <STARTER opos="RB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>37</UNIFORM>
+    <NAME>Gianni Olivas</NAME>
+    <TACKLES>
+        <UATACKLES>2</UATACKLES>
+        <ATACKLES>2</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="FS">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>42</UNIFORM>
+    <NAME>Devin Johnson</NAME>
+    <TACKLES>
+        <UATACKLES>3</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>43</UNIFORM>
+    <NAME>Sean Hubbard</NAME>
+    <TACKLES>
+        <UATACKLES>3</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="LB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>44</UNIFORM>
+    <NAME>Hudson Smith</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>1</UATFL>
+        <ATFL>0</ATFL>
+        <TFLYARDS>2</TFLYARDS>
+        <UASACKS>&#160;</UASACKS>
+        <ASACKS>&#160;</ASACKS>
+        <SACKYARDS>&#160;</SACKYARDS>
+    </TFL>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>45</UNIFORM>
+    <NAME>Jonathan Langston</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>46</UNIFORM>
+    <NAME>Kenneth Elmore</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>48</UNIFORM>
+    <NAME>Kyle Hoffner</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>51</UNIFORM>
+    <NAME>Oluwadamilola Teniola</NAME>
+    <TACKLES>
+        <UATACKLES>3</UATACKLES>
+        <ATACKLES>3</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>0</UATFL>
+        <ATFL>1</ATFL>
+        <TFLYARDS>1</TFLYARDS>
+        <UASACKS>0</UASACKS>
+        <ASACKS>1</ASACKS>
+        <SACKYARDS>1</SACKYARDS>
+    </TFL>
+    <FUMBLES>
+        <FUMBLESFORCED>1</FUMBLESFORCED>
+        <FUMBLESNUMBER>&#160;</FUMBLESNUMBER>
+        <FUMBLESYARDS>&#160;</FUMBLESYARDS>
+        <FUMBLESTD>&#160;</FUMBLESTD>
+    </FUMBLES>
+    <STARTER dpos="LB">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>52</UNIFORM>
+    <NAME>Preston Pemasa</NAME>
+    <TACKLES>
+        <UATACKLES>3</UATACKLES>
+        <ATACKLES>2</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>1</UATFL>
+        <ATFL>0</ATFL>
+        <TFLYARDS>3</TFLYARDS>
+        <UASACKS>1</UASACKS>
+        <ASACKS>0</ASACKS>
+        <SACKYARDS>3</SACKYARDS>
+    </TFL>
+    <STARTER dpos="DE">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>53</UNIFORM>
+    <NAME>C.J. Bryant</NAME>
+    <STARTER opos="C">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>54</UNIFORM>
+    <NAME>Maurice Dickson</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>59</UNIFORM>
+    <NAME>Austin Sargent</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>67</UNIFORM>
+    <NAME>Jamie Dunaway</NAME>
+    <STARTER opos="LT">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>69</UNIFORM>
+    <NAME>Mike Davis</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>1</UATFL>
+        <ATFL>0</ATFL>
+        <TFLYARDS>1</TFLYARDS>
+        <UASACKS>1</UASACKS>
+        <ASACKS>0</ASACKS>
+        <SACKYARDS>1</SACKYARDS>
+    </TFL>
+    <FUMBLES>
+        <FUMBLESFORCED>1</FUMBLESFORCED>
+        <FUMBLESNUMBER>&#160;</FUMBLESNUMBER>
+        <FUMBLESYARDS>&#160;</FUMBLESYARDS>
+        <FUMBLESTD>&#160;</FUMBLESTD>
+    </FUMBLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>71</UNIFORM>
+    <NAME>Jeff Harris</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>72</UNIFORM>
+    <NAME>Zach Welch</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>74</UNIFORM>
+    <NAME>Zach Shelton</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>76</UNIFORM>
+    <NAME>Corey O'Daniel</NAME>
+    <STARTER opos="LG">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>78</UNIFORM>
+    <NAME>Harrison Martin</NAME>
+    <STARTER opos="RG">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>79</UNIFORM>
+    <NAME>Steve Demilio</NAME>
+    <STARTER opos="RT">1</STARTER>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>80</UNIFORM>
+    <NAME>Richard Jules</NAME>
+    <RECEIVING>
+        <NUMBER>3</NUMBER>
+        <YARDS>26</YARDS>
+        <TD>0</TD>
+        <LONG>14</LONG>
+        <AVG>8.7</AVG>
+    </RECEIVING>
+    <RETURNS>
+        <PUNTNUMBER>2</PUNTNUMBER>
+        <PUNTYARDS>55</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>&#160;</KONUMBER>
+        <KOYARDS>&#160;</KOYARDS>
+        <KOTD>&#160;</KOTD>
+    </RETURNS>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>81</UNIFORM>
+    <NAME>Bradley Williams</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>82</UNIFORM>
+    <NAME>Lyndon Leslie</NAME>
+    <RECEIVING>
+        <NUMBER>1</NUMBER>
+        <YARDS>14</YARDS>
+        <TD>0</TD>
+        <LONG>14</LONG>
+        <AVG>14</AVG>
+    </RECEIVING>
+    <RETURNS>
+        <PUNTNUMBER>1</PUNTNUMBER>
+        <PUNTYARDS>5</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>&#160;</KONUMBER>
+        <KOYARDS>&#160;</KOYARDS>
+        <KOTD>&#160;</KOTD>
+    </RETURNS>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>83</UNIFORM>
+    <NAME>Ryan Gates</NAME>
+    <SCORING>
+        <TD>&#160;</TD>
+        <OFFKICKATT>5</OFFKICKATT>
+        <OFFKICKMADE>5</OFFKICKMADE>
+        <OFFRPATT>0</OFFRPATT>
+        <OFFRPMADE>0</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>1</FGATT>
+        <FGMADE>1</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>8</PTS>
+    </SCORING>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>84</UNIFORM>
+    <NAME>Jamal Patmon</NAME>
+    <RECEIVING>
+        <NUMBER>2</NUMBER>
+        <YARDS>17</YARDS>
+        <TD>1</TD>
+        <LONG>14</LONG>
+        <AVG>8.5</AVG>
+    </RECEIVING>
+    <SCORING>
+        <TD>1</TD>
+        <OFFKICKATT>&#160;</OFFKICKATT>
+        <OFFKICKMADE>&#160;</OFFKICKMADE>
+        <OFFRPATT>&#160;</OFFRPATT>
+        <OFFRPMADE>&#160;</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>&#160;</FGATT>
+        <FGMADE>&#160;</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>6</PTS>
+    </SCORING>
+    <STARTER opos="WR">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>85</UNIFORM>
+    <NAME>Graham Purvis</NAME>
+    <PUNT>
+        <NUMBER>6</NUMBER>
+        <YARDS>223</YARDS>
+        <TB>0</TB>
+        <INSIDE>2</INSIDE>
+        <AVG>37.2</AVG>
+    </PUNT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>88</UNIFORM>
+    <NAME>James Dugas</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>89</UNIFORM>
+    <NAME>Luke Stein</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>90</UNIFORM>
+    <NAME>Dylan Taylor</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>91</UNIFORM>
+    <NAME>Josh Dula</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>93</UNIFORM>
+    <NAME>Tranier Frasier</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>94</UNIFORM>
+    <NAME>Evan Short</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>1</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>0</UATFL>
+        <ATFL>1</ATFL>
+        <TFLYARDS>1</TFLYARDS>
+        <UASACKS>0</UASACKS>
+        <ASACKS>1</ASACKS>
+        <SACKYARDS>1</SACKYARDS>
+    </TFL>
+    <STARTER dpos="DT">1</STARTER>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>95</UNIFORM>
+    <NAME>Nick Stone</NAME>
+    <TACKLES>
+        <UATACKLES>2</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>1</UATFL>
+        <ATFL>0</ATFL>
+        <TFLYARDS>1</TFLYARDS>
+        <UASACKS>&#160;</UASACKS>
+        <ASACKS>&#160;</ASACKS>
+        <SACKYARDS>&#160;</SACKYARDS>
+    </TFL>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>96</UNIFORM>
+    <NAME>Maurice Bryan</NAME>
+    <PARTICIPANT>1</PARTICIPANT>
+</PLAYER>
+<PLAYER>
+    <UNIFORM>99</UNIFORM>
+    <NAME>Nelson Rushing</NAME>
+    <TACKLES>
+        <UATACKLES>1</UATACKLES>
+        <ATACKLES>0</ATACKLES>
+    </TACKLES>
+    <STARTER dpos="DT">1</STARTER>
+</PLAYER>
+</PLAYERS>
+<TOTALS>
+    <RUSHING>
+        <NUMBER>37</NUMBER>
+        <GAIN>122</GAIN>
+        <LOSS>21</LOSS>
+        <NET>101</NET>
+        <TD>2</TD>
+        <TOTPLAYS>80</TOTPLAYS>
+        <TOTYARDS>391</TOTYARDS>
+    </RUSHING>
+    <PASSING>
+        <ATT>43</ATT>
+        <COMP>25</COMP>
+        <INT>1</INT>
+        <YARDS>290</YARDS>
+        <TD>3</TD>
+        <CONV>&#160;</CONV>
+        <TOTPLAYS>80</TOTPLAYS>
+        <TOTYARDS>391</TOTYARDS>
+    </PASSING>
+    <RECEIVING>
+        <NUMBER>25</NUMBER>
+        <YARDS>290</YARDS>
+        <TD>3</TD>
+    </RECEIVING>
+    <PUNT>
+        <NUMBER>6</NUMBER>
+        <YARDS>223</YARDS>
+    </PUNT>
+    <RETURNS>
+        <PUNTNUMBER>4</PUNTNUMBER>
+        <PUNTYARDS>74</PUNTYARDS>
+        <PUNTTD>0</PUNTTD>
+        <KONUMBER>&#160;</KONUMBER>
+        <KOYARDS>&#160;</KOYARDS>
+        <KOTD>&#160;</KOTD>
+    </RETURNS>
+    <SCORING>
+        <TD>5</TD>
+        <OFFKICKATT>5</OFFKICKATT>
+        <OFFKICKMADE>5</OFFKICKMADE>
+        <OFFRPATT>0</OFFRPATT>
+        <OFFRPMADE>0</OFFRPMADE>
+        <DEFKICKATT>&#160;</DEFKICKATT>
+        <DEFKICKMADE>&#160;</DEFKICKMADE>
+        <DEFRPATT>&#160;</DEFRPATT>
+        <DEFRPMADE>&#160;</DEFRPMADE>
+        <FGATT>1</FGATT>
+        <FGMADE>1</FGMADE>
+        <SAF>&#160;</SAF>
+        <PTS>38</PTS>
+    </SCORING>
+    <TACKLES>
+        <UATACKLES>46</UATACKLES>
+        <ATACKLES>22</ATACKLES>
+    </TACKLES>
+    <TFL>
+        <UATFL>5</UATFL>
+        <ATFL>2</ATFL>
+        <TFLYARDS>10</TFLYARDS>
+        <UASACKS>&#160;</UASACKS>
+        <ASACKS>&#160;</ASACKS>
+        <SACKYARDS>6</SACKYARDS>
+    </TFL>
+    <PASSDEFENSE>
+        <INTNUMBER>1</INTNUMBER>
+        <INTYARDS>17</INTYARDS>
+        <INTTD>0</INTTD>
+        <PASSBREAKUPS>1</PASSBREAKUPS>
+    </PASSDEFENSE>
+    <FUMBLES>
+        <FUMBLESFORCED>2</FUMBLESFORCED>
+        <FUMBLESNUMBER>&#160;</FUMBLESNUMBER>
+        <FUMBLESYARDS>&#160;</FUMBLESYARDS>
+        <FUMBLESTD>&#160;</FUMBLESTD>
+    </FUMBLES>
+</TOTALS>
+</VISITOR>
+</TEAMS>
+</WORKSHEET>

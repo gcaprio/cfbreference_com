@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}College Football Reference: Teams{% endblock %}
+
+{% block content %}
+
+<ul>
+{% for team in team_list %}
+<li><a href="{{ team.get_absolute_url }}">{{ team.name }}</a> {{ team.current_record }}</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

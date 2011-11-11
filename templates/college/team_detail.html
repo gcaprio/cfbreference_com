@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}College Football Reference: {{ team.name }}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ team.name }}</h1>
+    <h5>{{ team.conference.name }}</h5>
+
+    {% if coach %}
+        Coach: <a href="{{ coach.coach.get_absolute_url }}">{{ coach.coach.full_name }}</a>
+    {% else %}
+    {% endif %}
+
+    <h3>Season Records Since 1988</h3>
+    <table>
+        <th>Season</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Ties*</th>
+        {% for season in college_years %}
+            <tr>
+                <td><a href="{{ season.season }}/">{{ season.season }}</a></td>
+                <td>{{ season.wins }}</td>
+                <td>{{ season.losses }}</td>
+                <td>{{ season.ties }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    * Ties were eliminated beginning in 1996.
+
+    {% if popular_opponents %}
+    <h3>Popular Opponents Since 1988</h3>
+    <ul>
+        {% for team2 in popular_opponents %}
+          {% if team2 %}
+            <li><a href="{{ team2.get_absolute_url }}">{{ team2.name }}</a> (<a
+                    href="{% url team_vs team1=team.slug team2=team2.slug %}">{{ team2.number }}</a>)
+            </li>
+          {% endif %}
+        {% endfor %}
+    </ul>
+    (<a href="opponents/">Browse all opponents since 1988</a>)
+    {% endif %}
+
+    <h3><a href="{% url tch team.slug %}">Coaching History</a></h3>
+    <h3><a href="{% url alum_coach team.slug %}">Alumni in Coaching</a></h3>
+
+{% endblock %}

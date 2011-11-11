@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+
+{% if team_list %}
+
+<h3>Teams in {{ state.name }}</h3>
+
+<ul>
+    {% for team in team_list %}
+    <li><a href="{{ team.get_absolute_url }}">{{ team.name }}</a></li>
+    {% endfor %}
+
+</ul>
+
+{% else %}
+No teams from {{ state.name }} are available.
+
+{% endif %}
+
+{% endblock %}
