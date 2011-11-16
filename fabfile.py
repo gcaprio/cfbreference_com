@@ -6,6 +6,9 @@ from fabric.contrib import files, console
 from fabric import utils
 from fabric.decorators import hosts
 
+import envs.local_settings as local_settings
+import envs.pro_settings as pro_settings
+
 RSYNC_EXCLUDE = (
     '.DS_Store',
     '.hg',
@@ -45,7 +48,7 @@ def pro():
     # Target Environment sub-domain ( i.e. beta.domain.com, www.domain.com)
     env.environment = 'www'
     # Host Tuple List for deployment.
-    env.hosts = ['173.203.212.245:13869']
+    env.hosts = pro_settings.HOSTS
     _setup_path()
 
 def bootstrap():

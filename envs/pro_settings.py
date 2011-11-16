@@ -3,6 +3,8 @@ from env_vars import *
 
 DEBUG = False
 
+HOSTS = ['173.203.212.245:13869']
+
 DATABASES = {
     'default': {
         'NAME': 'cfbreference_com',
