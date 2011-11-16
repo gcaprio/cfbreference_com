@@ -1,4 +1,4 @@
 *.pyc
-envs/*settings.py
+envs/pro_settings.py
 cfbreference.com.log
 cfbreference_com.email.log/
