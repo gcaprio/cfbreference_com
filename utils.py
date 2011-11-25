@@ -10,6 +10,7 @@ from urlparse import urljoin
 from BeautifulSoup import BeautifulSoup
 from college.models import *
 from rankings.models import *
+from django.db.models import F
 
 """
 The functions here are a collection of utilities that help with data loading 
@@ -311,6 +312,10 @@ def advance_coaching_staff(team, year):
             cc.jobs.add(job)
 
 def remove_bad_player_stat_instances(season):
+    """
+    Should the player game stat loader create objects that refer to the wrong game (the opponent's), this function
+    will delete them from the db.
+    """
     objs = [PlayerGame, PlayerRush, PlayerPass, PlayerReceiving, PlayerScoring, PlayerTackle, PlayerTacklesLoss, PlayerPassDefense, PlayerFumble, PlayerReturn]
     for obj in objs:
         obj.objects.filter(game__season=season).select_related(depth=1).exclude(game__team1=F('player__team')).delete()
