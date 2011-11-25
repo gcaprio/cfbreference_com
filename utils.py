@@ -87,7 +87,7 @@ def set_head_coaches():
     One-time utility to add a boolean value to college coach records. Used to prepare
     the populate_head_coaches function for games. 
     """
-    cc = CollegeCoach.objects.select_related().filter(jobs__name='Head Coach').update(is_head_coach=True)
+    CollegeCoach.objects.select_related().filter(jobs__name='Head Coach').update(is_head_coach=True)
 
 def populate_head_coaches(game):
     """
@@ -96,7 +96,7 @@ def populate_head_coaches(game):
     an entire season or as part of the game loader. As college coach data
     grows, will need to be run periodically on games without head coaches:
     
-    >>> games = Game.objects.filter(coach1__isnull=True, coach2__isnull=True)
+    >>> games = Game.objects.filter(coach1__id=0, coach2__id=0)
     >>> for game in games:
     ...     populate_head_coaches(game)
     ...
