@@ -447,10 +447,10 @@ def player_detail(request, team, season, player, number, position):
     pos = get_object_or_404(Position, abbrev=position.upper())
     p = get_object_or_404(Player, team=cy, season=cy.season, slug=player, number=number, position=pos)
     starts = PlayerGame.objects.filter(player=p, game__season=season, starter=True).count()
-    ps = PlayerScoring.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
-    pret = PlayerReturn.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
-    pf = PlayerFumble.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
-    pr = PlayerRush.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
+    ps = PlayerScoring.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
+    pret = PlayerReturn.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
+    pf = PlayerFumble.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
+    pr = PlayerRush.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
     if pr:
         rush_totals = pr.aggregate(Sum('net'),Sum('gain'),Sum('loss'),Sum('rushes'),Sum('td'))
         try:
@@ -460,7 +460,7 @@ def player_detail(request, team, season, player, number, position):
     else:
         rush_totals = {'rushes__sum': None, 'gain__sum': None, 'loss__sum': None, 'td__sum': None, 'net__sum': None}
         rush_tot_avg = None
-    pp = PlayerPass.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
+    pp = PlayerPass.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
     if pp:
         pass_totals = pp.aggregate(Sum('td'), Sum('yards'), Sum('attempts'), Sum('completions'), Sum('interceptions'), Avg('pass_efficiency'))
         if pass_totals['completions__sum'] == 0 or pass_totals['attempts__sum'] == 0:
@@ -470,7 +470,7 @@ def player_detail(request, team, season, player, number, position):
     else:
         pass_totals = {'interceptions__sum': None, 'td__sum':None, 'attempts__sum': None, 'completions__sum': None, 'yards__sum': None, 'pass_efficiency__avg': None}
         comp_pct = None
-    prec = PlayerReceiving.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
+    prec = PlayerReceiving.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
     if prec:
         rec_totals = prec.aggregate(Sum('receptions'), Sum('yards'), Sum('td'))
         if rec_totals['receptions__sum'] > 0:
@@ -480,10 +480,10 @@ def player_detail(request, team, season, player, number, position):
     else:
         rec_totals = {'receptions__sum': None, 'yards__sum': None, 'td__sum': None}
         rec_tot_avg = None
-    pt = PlayerTackle.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
-    ptfl = PlayerTacklesLoss.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
-    ppd = PlayerPassDefense.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
-    ppf = PlayerFumble.objects.filter(player=p, game__season=season).select_related().order_by('-college_game.date')
+    pt = PlayerTackle.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
+    ptfl = PlayerTacklesLoss.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
+    ppd = PlayerPassDefense.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
+    ppf = PlayerFumble.objects.filter(player=p, game__season=season).select_related(depth=1).order_by('-college_game.date')
     other_seasons = Player.objects.filter(team__college=cy.college, slug=p.slug).exclude(season=season).order_by('-season')
     return render_to_response('college/player_detail.html', {
         'team': cy.college, 'year': season, 'cy': cy, 'player': p, 'starts': starts, 'other_seasons': other_seasons, 'scoring': ps, 'returns': pret, 'fumbles': pf,
@@ -494,7 +494,7 @@ def player_detail(request, team, season, player, number, position):
         'rec_tot_receptions': rec_totals['receptions__sum'], 'rec_tot_yards': rec_totals['yards__sum'], 'rec_tot_td': rec_totals['td__sum'], 'rec_tot_avg': rec_tot_avg, 'fumbles':ppf})
 
 def rushing_losses(request, season):
-    players = Player.objects.filter(season=season).select_related().annotate(net_total=Sum('playerrush__net'),gain_total=Sum('playerrush__gain'),loss_total=Sum('playerrush__loss'),rush_total=Sum('playerrush__rushes'),td_total=Sum('playerrush__td')).filter(net_total__gte=1000, loss_total__lte=100).order_by('loss_total', '-net_total')
+    players = Player.objects.filter(season=season).select_related(depth=1).annotate(net_total=Sum('playerrush__net'),gain_total=Sum('playerrush__gain'),loss_total=Sum('playerrush__loss'),rush_total=Sum('playerrush__rushes'),td_total=Sum('playerrush__td')).filter(net_total__gte=1000, loss_total__lte=100).order_by('loss_total', '-net_total')
     return render_to_response('college/rushing_losses.html', {'season': season, 'player_list': players})
 
 @csrf_protect
@@ -509,8 +509,8 @@ def coach_index(request):
         recent_hires = None
     else:
         two_months_ago = datetime.date.today()-datetime.timedelta(60)
-        recent_departures = CollegeCoach.objects.select_related().filter(jobs__name='Head Coach', end_date__gte=two_months_ago).order_by('-end_date')[:10]
-        recent_hires = CollegeCoach.objects.select_related().filter(jobs__name='Head Coach', start_date__gte=two_months_ago).order_by('-start_date')[:10]
+        recent_departures = CollegeCoach.objects.select_related(depth=1).filter(jobs__name='Head Coach', end_date__gte=two_months_ago).order_by('-end_date')[:10]
+        recent_hires = CollegeCoach.objects.select_related(depth=1).filter(jobs__name='Head Coach', start_date__gte=two_months_ago).order_by('-start_date')[:10]
         coach_list = Coach.objects.none()
         
     return render_to_response('coaches/coach_index.html', {
