@@ -310,6 +310,12 @@ def advance_coaching_staff(team, year):
         for job in coach.jobs.all():
             cc.jobs.add(job)
 
+def remove_bad_player_stat_instances(season):
+    objs = [PlayerGame, PlayerRush, PlayerPass, PlayerReceiving, PlayerScoring, PlayerTackle, PlayerTacklesLoss, PlayerPassDefense, PlayerFumble, PlayerReturn]
+    for obj in objs:
+        obj.objects.filter(game__season=season).select_related(depth=1).exclude(game__team1=F('player__team')).delete()
+    
+
 def populate_drive_slugs(season='2011', division='2'):
     from django.db import connection, transaction
     cursor = connection.cursor()
