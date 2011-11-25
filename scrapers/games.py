@@ -68,6 +68,8 @@ def game_updater(year, teams, week, nostats=False):
                             team2 = CollegeYear.objects.get(college__id=30416, season=year)
                         elif t2 == 357: # another one like the above - Lincoln Univ. PA
                             team2 = CollegeYear.objects.get(college__id=30417, season=year)
+                        elif t2 == 30134: # Black Hills St.
+                            team2 = CollegeYear.objects.get(college__id=30551, season=year)
                         else:
                             team2 = CollegeYear.objects.get(college__id=t2, season=year)
                     except:
