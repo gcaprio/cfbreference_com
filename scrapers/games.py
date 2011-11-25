@@ -72,6 +72,8 @@ def game_updater(year, teams, week, nostats=False):
                             team2 = CollegeYear.objects.get(college__id=30551, season=year)
                         elif t2 == 30120: # William Jewell
                             team2 = CollegeYear.objects.get(college__id=30642, season=year)
+                        elif t2 == 30127: # Simon Fraser
+                            team2 = CollegeYear.objects.get(college__id=30722, season=year)
                         else:
                             team2 = CollegeYear.objects.get(college__id=t2, season=year)
                     except:
