@@ -372,12 +372,8 @@ def game_drive(request, team1, team2, year, month, day):
 
     date = datetime.date(int(year), int(month), int(day))
     game = get_object_or_404(Game, team1=team_1, team2=team_2, date=date)
-    try:
-        drives = GameDrive.objects.filter(game=game, team=team_1).order_by('drive')
-    except:
-        drives = GameDrive.objects.none()
+    drives = game.gamedrive_set.all()
     return render_to_response('college/game_drives.html', {'team_1': team_1, 'team_2': team_2, 'game': game, 'drives': drives })
-
 
 def game_index(request):
     pass # do calendar-based view here
