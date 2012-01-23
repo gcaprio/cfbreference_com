@@ -241,7 +241,7 @@ def add_college_years(year):
     """
     Creates college years for teams. Used at the beginning of a new season or to backfill.
     """
-    teams = College.objects.all().order_by('id')
+    teams = College.objects.filter(updated=True).order_by('id')
     for team in teams:
         cy, created = CollegeYear.objects.get_or_create(season=year, college=team)
 
