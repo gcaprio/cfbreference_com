@@ -102,6 +102,6 @@ INSTALLED_APPS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'i(pit_g!zlkkf_^%@-io$bp6#&u#k^vu65)=n@-t)d%6ep&4ef'
 
-CURRENT_SEASON = 2011
+CURRENT_SEASON = 2012
 
 EMAIL_SUBJECT_PREFIX = '[College Football Reference] '
