@@ -30,7 +30,7 @@
     {% if recent_departures %}
         <div id="coach_depart">
             <h3>Recent Departures</h3>
-            (<a href="departures/{{ current_season }}/">See all departures for {{ previous_season }}</a>) <a
+            (<a href="departures/{{ previous_season }}/">See all departures for {{ previous_season }}</a>) <a
                 href="/feeds/coaches/departures/"><img src="/static/img/feed.png"></a>
 
             <table>
@@ -55,7 +55,7 @@
     {% if recent_hires %}
         <div id="coach_hired">
             <h3>Recent Hires</h3>
-            (<a href="hires/{{ next_season }}/">See all hires for {{ current_season }}</a>) <a
+            (<a href="hires/{{ current_season }}/">See all hires for {{ current_season }}</a>) <a
                 href="/feeds/coaches/hires/"><img src="/static/img/feed.png"></a>
             <table>
                 <tr>
