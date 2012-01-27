@@ -513,8 +513,8 @@ def coach_index(request):
         'recent_departures': recent_departures,
         'recent_hires': recent_hires,
         'coach_list': coach_list,
-        'current_season': CURRENT_SEASON,
-        'next_season': CURRENT_SEASON+1
+        'previous_season': CURRENT_SEASON-1,
+        'current_season': CURRENT_SEASON
     }, context_instance=RequestContext(request))
 
 def departures(request,season):
