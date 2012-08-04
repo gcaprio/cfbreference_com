@@ -303,8 +303,8 @@ def advance_coaching_staff(team, year):
     """
     previous_year = int(year)-1
     college = College.objects.get(id=team.id)
-    old_cy = CollegeYear.objects.get(college=college, year=previous_year)
-    new_cy = CollegeYear.objects.get(college=college, year=year)
+    old_cy = CollegeYear.objects.get(college=college, season=previous_year)
+    new_cy = CollegeYear.objects.get(college=college, season=year)
     old_staff = CollegeCoach.objects.filter(collegeyear=old_cy, end_date__isnull=True)
     for coach in old_staff:
         cc, created = CollegeCoach.objects.get_or_create(collegeyear=new_cy, coach=coach.coach)
@@ -333,7 +333,7 @@ def populate_drive_slugs(season='2011', division='2'):
         params = (str(link.contents[0]), int(link["href"].split('org=')[1]))
         cursor.execute(query, params)
 
-def populate_divisions(season=2011, division='2'):
+def populate_divisions(season=2012, division='2'):
     divs = { "2": "D", "3": "T", "B": "B", "C":"C"}
     url = "http://web1.ncaa.org/mfb/%s/Internet/ranking_summary/DIVISION%s.HTML" % (str(season), division)
     html = urllib.urlopen(url).read()
