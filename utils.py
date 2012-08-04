@@ -321,7 +321,7 @@ def remove_bad_player_stat_instances(season):
         obj.objects.filter(game__season=season).select_related(depth=1).exclude(game__team1=F('player__team')).delete()
     
 
-def populate_drive_slugs(season='2011', division='2'):
+def populate_drive_slugs(season='2012', division='2'):
     from django.db import connection, transaction
     cursor = connection.cursor()
     url = "http://web1.ncaa.org/mfb/%s/Internet/ranking_summary/DIVISION%s.HTML" % (season, division)
