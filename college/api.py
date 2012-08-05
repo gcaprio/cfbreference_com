@@ -1,5 +1,5 @@
 from tastypie.resources import ModelResource
-from college.models import College, CollegeYear, Coach, CollegeCoach
+from college.models import College, CollegeYear, Coach, CollegeCoach, Game
 from tastypie import fields
 
 class CollegeResource(ModelResource):
@@ -12,8 +12,17 @@ class CollegeResource(ModelResource):
         excludes = ['updated', 'id']
         allowed_methods = ['get']
 
+class GameResource(ModelResource):
+    
+    class Meta:
+        queryset = Game.objects.filter(has_stats=True).order_by('-date')
+        resource_name = 'game'
+        excludes = ['id']
+        allowed_methods = ['get']
+
 class CollegeYearResource(ModelResource):
     college = fields.ToOneField(CollegeResource, 'college')
+    games = fields.ToManyField('college.api.GameResource', 'game_set')
 
     class Meta:
         queryset = CollegeYear.objects.filter(college__updated=True).order_by('college__name')
