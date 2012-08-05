@@ -24,7 +24,7 @@ class GameResource(ModelResource):
         allowed_methods = ['get']
     
     def dehydrate_ncaa_xml(self, bundle):
-        return 'http://web1.ncaa.org/d1mfb/%s/Internet/worksheets/%s.xml' % (self.season, self.ncaa_xml.strip()
+        return bundle.data['ncaa_xml'].strip()
 
 class CollegeYearResource(ModelResource):
     college = fields.ToOneField(CollegeResource, 'college')
