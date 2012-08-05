@@ -2,6 +2,14 @@ from django.conf.urls.defaults import *
 from django.contrib.sitemaps.views import sitemap
 from sitemaps import all_sitemaps
 from views import player_detail, team_players, player
+from college.api import CollegeResource, CollegeYearResource, CoachResource, CollegeCoachResource
+from tastypie.api import Api
+
+v1_api = Api(api_name='v1')
+v1_api.register(CollegeResource())
+v1_api.register(CollegeYearResource())
+v1_api.register(CoachResource())
+v1_api.register(CollegeCoachResource())
 
 urlpatterns = patterns('college.views',
      url(r'^seasons/(?P<season>\d+)/week/(?P<week>\d+)/$', 'season_week'),
@@ -47,4 +55,8 @@ urlpatterns = patterns('college.views',
      url(r'^states/$', 'state_index'),
      url(r'^states/(?P<state>[a-z][a-z])/$', 'state_detail'),
      url(r'^sitemap\.xml$', sitemap, {'sitemaps': all_sitemaps}),
+     
+     # API urls
+     url(r'^api/', include(v1_api.urls)),
+     
 )

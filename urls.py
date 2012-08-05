@@ -17,7 +17,6 @@ urlpatterns = patterns('',
      url(r"^$", "college.views.homepage"),
      url(r"^", include("college.urls")),
      url(r"^rankings/", include("rankings.urls")),
-     url(r"^api/", include("api.urls")),
      (r'^feeds/(?P<url>.*)/$', 'django.contrib.syndication.views.feed', {'feed_dict': feeds}),
      url(r"^blog/", include("blog.urls")),
      url(r"^robots.txt$", direct_to_template, { 'template':"robots.txt"}, name="robots")
