@@ -14,9 +14,6 @@ class CollegeResource(ModelResource):
 
 class GameResource(ModelResource):
     
-    team1 = fields.ToOneField(CollegeYearResource, 'collegeyear', related_name='team1')
-    team2 = fields.ToOneField(CollegeYearResource, 'collegeyear', related_name='team2')
-    
     class Meta:
         queryset = Game.objects.filter(has_stats=True).order_by('-date')
         resource_name = 'game'
@@ -25,6 +22,7 @@ class GameResource(ModelResource):
     
     def dehydrate_ncaa_xml(self, bundle):
         return bundle.data['ncaa_xml'].strip()
+        
 
 class CollegeYearResource(ModelResource):
     college = fields.ToOneField(CollegeResource, 'college')
