@@ -430,6 +430,12 @@ class Game(models.Model):
     def __unicode__(self):
         return '%s vs. %s, %s' % (self.team1, self.team2, self.date)
     
+    def team1_name(self):
+        return self.team1.college.name
+
+    def team2_name(self):
+        return self.team2.college.name
+    
     def get_absolute_url(self):
         return '/teams/%s/vs/%s/%s/%s/%s/' % (self.team1.college.slug, self.team2.college.slug, self.date.year, self.date.month, self.date.day)
 
