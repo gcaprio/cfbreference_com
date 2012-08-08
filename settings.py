@@ -94,7 +94,7 @@ INSTALLED_APPS = (
     'debug_toolbar',
     'common',
     'college',
-    'blog',
+    #'blog',
     'rankings',
     'scrapers',
 )
@@ -102,6 +102,6 @@ INSTALLED_APPS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'i(pit_g!zlkkf_^%@-io$bp6#&u#k^vu65)=n@-t)d%6ep&4ef'
 
-CURRENT_SEASON = 2012
+CURRENT_SEASON = 2013
 
 EMAIL_SUBJECT_PREFIX = '[College Football Reference] '
