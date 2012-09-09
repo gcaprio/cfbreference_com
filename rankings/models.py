@@ -6,7 +6,10 @@ RANKINGTYPE_CHOICES = (
     ('P', 'Player'),
 )
 
-CURRENT_SEASON = 2011
+if datetime.date.today().month < 8:
+    CURRENT_SEASON = datetime.date.today().year-1
+else:
+    CURRENT_SEASON = datetime.date.today().year
 
 class RankingType(models.Model):
     name = models.CharField(max_length=75)
