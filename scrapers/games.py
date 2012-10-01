@@ -26,10 +26,7 @@ def game_updater(year, teams, week, nostats=False):
     print starting_time.strftime("%Y-%m-%d %H:%M")
 
     last_team_end = datetime.datetime.now()
-    counter = 1
-    total_count = teams.count()
     for team in teams:
-        print "%(counter)s out of %(total_count)s " % { 'counter': str(counter), 'total_count': str(total_count) }
         team_start = datetime.datetime.now()
         print team
         print "Team Start"
