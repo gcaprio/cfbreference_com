@@ -299,7 +299,7 @@ def advance_coaching_staff(team, year):
     >>> from utils import advance_coaching_staff
     >>> from college.models import *
     >>> team = College.objects.get(id = 8)
-    >>> advance_coaching_staff(team, 2010)
+    >>> advance_coaching_staff(team, 2012)
     """
     previous_year = int(year)-1
     college = College.objects.get(id=team.id)
