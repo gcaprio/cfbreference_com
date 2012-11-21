@@ -144,8 +144,7 @@ def apache_restart():
 def symlink_django():    
     """ create symbolic link so Apache can serve django admin media """
     require('root', provided_by=('pro'))
-    admin_media = os.path.join(env.virtualenv_root,
-                               'src/django/django/contrib/admin/media/')
+    admin_media = os.path.join(env.virtualenv_root, 'src/django/django/contrib/admin/media/')
     media = os.path.join(env.code_root, 'media/admin')
     if not files.exists(media):
         run('ln -s %s %s' % (admin_media, media))
