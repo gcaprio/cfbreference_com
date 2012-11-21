@@ -1,3 +1,4 @@
+import datetime
 from django.db import models
 from college.models import College, Player, Week, CollegeYear
 
