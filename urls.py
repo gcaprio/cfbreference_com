@@ -11,7 +11,7 @@ feeds = {
 admin.autodiscover()
 
 urlpatterns = patterns('',
-     (r'^admin/coach_totals/', "college.views.admin_coach_totals"),
+     (r'^admin/coach_totals/(?P<season>\d\d\d\d)/$', "college.views.admin_coach_totals"),
      (r'^admin/doc/', include('django.contrib.admindocs.urls')), 
      (r"^admin/", include(admin.site.urls)),
      url(r"^$", "college.views.homepage"),
