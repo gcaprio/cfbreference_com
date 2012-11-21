@@ -577,6 +577,6 @@ def recent_hires_feed(request):
     return HttpResponse(xml, mimetype='application/xml')
 
 def admin_coach_totals(request):
-    team_list = CollegeYear.objects.select_related().filter(season=2010, college__updated=True).order_by('college_college.name')
+    team_list = CollegeYear.objects.select_related().filter(season=CURRENT_SEASON, college__updated=True).order_by('college_college.name')
     return render_to_response('admin/coach_totals.html', {'team_list': team_list})
     
