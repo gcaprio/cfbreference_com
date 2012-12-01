@@ -2,7 +2,7 @@ import urllib
 import time
 from BeautifulSoup import BeautifulSoup
 from college.models import *
-from utils import update_college_year, populate_head_coaches
+from utils import update_college_year, populate_head_coaches, update_drive_outcomes
 from django.template.defaultfilters import slugify
 from scrapers.models import NCAAGame
 
@@ -431,6 +431,7 @@ def game_drive_loader(game):
                 print "Could not save drive %s, %s, %s" % (drive, game, team)
         game.has_drives = True
         game.save()
+        update_drive_outcomes(team)
 
 def game_scores_loader(game):
     contents = urllib.urlopen(game.get_ncaa_scoring_url().strip()).read()

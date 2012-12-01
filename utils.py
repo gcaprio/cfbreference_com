@@ -174,6 +174,18 @@ def update_conf_games(year):
         except:
             pass
 
+def update_drive_outcomes(collegeyear):
+    """
+    Updates GameDriveSeason records for a CollegeYear instance.
+    """
+    do = DriveOutcome.objects.select_related().filter(gamedrive__season=collegeyear.season, gamedrive__team=collegeyear)
+    outcomes = do.annotate(Count('gamedrive')).order_by('-gamedrive__count')
+    for outcome in outcomes:
+        gds, created = GameDriveSeason.objects.get_or_create(season=collegeyear.season, team=collegeyear, outcome_id=outcome.id)
+        gds.total = outcome.gamedrive__count
+        gds.save()
+    
+
 def update_quarter_scores(game):
     """
     Utility to update quarter scores for existing games. New games handled via ncaa_loader.
