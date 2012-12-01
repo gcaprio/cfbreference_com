@@ -520,7 +520,7 @@ class GameDriveSeason(models.Model):
     season = models.IntegerField()
     team = models.ForeignKey(CollegeYear)
     outcome = models.ForeignKey(DriveOutcome)
-    total = models.IntegerField()
+    total = models.IntegerField(null=True)
     
     def __unicode__(self):
         return "%s: %s %s" % (self.season, self.team, self.outcome)
