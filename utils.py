@@ -181,7 +181,7 @@ def update_drive_outcomes(collegeyear):
     do = DriveOutcome.objects.select_related().filter(gamedrive__season=collegeyear.season, gamedrive__team=collegeyear)
     outcomes = do.annotate(Count('gamedrive')).order_by('-gamedrive__count')
     for outcome in outcomes:
-        gds, created = GameDriveSeason.objects.get_or_create(season=collegeyear.season, team=collegeyear, outcome_id=outcome.id)
+        gds, created = GameDriveSeason.objects.get_or_create(season=collegeyear.season, team=collegeyear, outcome=outcome, total=0)
         gds.total = outcome.gamedrive__count
         gds.save()
     
