@@ -35,4 +35,7 @@ def rankings_season(request, rankingtype, season, div='B', week=None):
     other_weeks = Week.objects.filter(season=season).exclude(week_num=latest_week.week_num).exclude(end_date__gte=datetime.date.today()).order_by('end_date')
     rankings_list = Ranking.objects.filter(season=season, ranking_type=rt, week=latest_week, division=div).select_related().order_by('rank')
     return render_to_response('rankings/rankings_season.html', {'ranking_type': rt, 'rankings_list': rankings_list, 'season':season, 'latest_week':latest_week, 'other_weeks':other_weeks})
-
+    
+def drive_outcomes(request, season):
+    outcomes = GameDriveSeason.objects.select_related().filter(season=season, outcome__name='Touchdown').order_by('-total')
+    return render_to_response('rankings/drive_outcomes.html', {'outcomes':outcomes, 'season': season})
