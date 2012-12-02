@@ -1,5 +1,5 @@
 from django.contrib import admin
-from college.models import State, City, College, Coach, CoachingJob, CollegeYear, CollegeCoach, Game, Position, Player, PlayerGame, PlayerRush, PlayerPass,PlayerReceiving, PlayerFumble, PlayerScoring, PlayerTackle, PlayerTacklesLoss, PlayerPassDefense, PlayerReturn, Conference, GameOffense, GameDefense, Week, GameDrive, DriveOutcome, BowlGame, QuarterScore, GameScore
+from college.models import State, City, College, Coach, CoachingJob, CollegeYear, CollegeCoach, Game, Position, Player, PlayerGame, PlayerRush, PlayerPass,PlayerReceiving, PlayerFumble, PlayerScoring, PlayerTackle, PlayerTacklesLoss, PlayerPassDefense, PlayerReturn, Conference, GameOffense, GameDefense, Week, GameDrive, DriveOutcome, BowlGame, QuarterScore, GameScore, GameDriveSeason
 
 class CollegeAdmin(admin.ModelAdmin):
     list_display = ('name', 'updated')
@@ -70,6 +70,10 @@ class GameDriveAdmin(admin.ModelAdmin):
     list_display = ('game', 'team', 'drive', 'end_result')
     list_select_related = True
 
+class GameDriveSeasonAdmin(admin.ModelAdmin):
+    list_display = ('season', 'team', 'outcome', 'total')
+    list_filter = ('outcome', 'season')
+
 class PlayerGameAdmin(admin.ModelAdmin):
     list_display = ('player', 'game')
     raw_id_fields = ('player', 'game')
@@ -122,5 +126,6 @@ admin.site.register(Game, GameAdmin)
 admin.site.register(Week, WeekAdmin)
 admin.site.register(DriveOutcome, DriveOutcomeAdmin)
 admin.site.register(GameDrive, GameDriveAdmin)
+admin.site.register(GameDriveSeason, GameDriveSeasonAdmin)
 admin.site.register(BowlGame, BowlGameAdmin)
 admin.site.register(GameScore, GameScoreAdmin)

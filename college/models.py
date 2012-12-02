@@ -521,9 +521,14 @@ class GameDriveSeason(models.Model):
     team = models.ForeignKey(CollegeYear)
     outcome = models.ForeignKey(DriveOutcome)
     total = models.IntegerField(null=True)
+    drives_total = models.IntegerField(null=True)
     
     def __unicode__(self):
         return "%s: %s %s" % (self.season, self.team, self.outcome)
+
+    def pct_of_total(self):
+        return float(float(self.total)/float(self.drives_total))*100
+
     
 class GameOffense(models.Model):
     game = models.ForeignKey(Game)

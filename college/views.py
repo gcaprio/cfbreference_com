@@ -176,12 +176,9 @@ def team_bowl_games(request, team):
 def team_drives_season(request, team, season):
     t = get_object_or_404(College, slug=team)
     season_record = get_object_or_404(CollegeYear, college=t, season=season)
-    do = DriveOutcome.objects.select_related().filter(gamedrive__season=season, gamedrive__team=season_record)
-    outcomes = do.annotate(Count('gamedrive')).order_by('-gamedrive__count')
-    d = {}
-    for outcome in outcomes:
-        d[outcome.name] = outcome.gamedrive__count
-    return render_to_response('college/team_drives_season.html', {'team': t, 'season_record': season_record, 'season': season, 'total_drives': len(do), 'outcomes': outcomes, 'keys': d.keys(), 'values': d.values(), 'items' : d.iteritems()})
+    outcomes = season_record.gamedriveseason_set.select_related().all()
+    total_drives = outcomes.aggregate(Sum('total'))
+    return render_to_response('college/team_drives_season.html', {'team': t, 'season_record': season_record, 'season': season, 'total_drives': total_drives['total__sum'], 'outcomes': outcomes, 'keys': [o.outcome.name for o in outcomes], 'values': [o.total for o in outcomes]})
 
 @cache_control(must_revalidate=True, max_age=12000)
 def team_rankings_season(request, team, season, week=None):
