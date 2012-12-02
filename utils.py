@@ -183,6 +183,7 @@ def update_drive_outcomes(collegeyear):
     for outcome in outcomes:
         gds, created = GameDriveSeason.objects.get_or_create(season=collegeyear.season, team=collegeyear, outcome=outcome)
         gds.total = outcome.gamedrive__count
+        gds.drives_total = do.count()
         gds.save()
     
 
