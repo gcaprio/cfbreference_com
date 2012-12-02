@@ -10,9 +10,9 @@
 <h3>Drive Outcome Rankings for {{ season }}</h3>
 
 <table>
-    <th>College</th><th>Total Drives</th><th>TD</th><th>Pct TD</th>
+    <th>College</th><th>Record</th><th>Total Drives</th><th>TD</th><th>Pct TD</th>
     {% for ranking in outcomes %}
-    <tr><td><a href="{% url team_drives_season team=ranking.team.college.slug season=season %}">{{ ranking.team.college.name }}</a></td><td>{{ ranking.drives_total }}</td><td>{{ ranking.total }}</td><td>{{ ranking.pct_of_total|floatformat}}</td></tr>
+    <tr><td><a href="{% url team_drives_season team=ranking.team.college.slug season=season %}">{{ ranking.team.college.name }}</a></td><td>{{ ranking.team.record }}</td><td>{{ ranking.drives_total }}</td><td>{{ ranking.total }}</td><td>{{ ranking.pct_of_total|floatformat}}</td></tr>
     {% endfor %}
 </table>
 
