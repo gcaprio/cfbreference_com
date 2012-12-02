@@ -37,5 +37,5 @@ def rankings_season(request, rankingtype, season, div='B', week=None):
     return render_to_response('rankings/rankings_season.html', {'ranking_type': rt, 'rankings_list': rankings_list, 'season':season, 'latest_week':latest_week, 'other_weeks':other_weeks})
     
 def drive_outcomes(request, season):
-    outcomes = GameDriveSeason.objects.select_related().filter(season=season, outcome__name='Touchdown').order_by('-total')
+    outcomes = GameDriveSeason.objects.select_related().filter(season=season, outcome__name='Touchdown').order_by('-total')[:50]
     return render_to_response('rankings/drive_outcomes.html', {'outcomes':outcomes, 'season': season})
