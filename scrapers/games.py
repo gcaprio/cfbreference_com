@@ -130,7 +130,6 @@ def game_updater(year, teams, week, nostats=False):
         duration = team_end - last_team_end
         print duration.seconds
         last_team_end = team_end
-        counter = counter + 1
 
     update_college_year(year)
 
