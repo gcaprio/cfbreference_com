@@ -432,6 +432,30 @@ def game_drive_loader(game):
         game.save()
         update_drive_outcomes(team)
 
+def game_play_loader(game):
+    contents = urllib.urlopen(game.get_play_by_play_url().strip()).read()
+    soup = BeautifulSoup(contents)
+    rows = soup.finaAll('li')
+    for row in rows:
+        down_and_distance = re.search('\A\(.{8,11}\)', row.text).group(0)
+        down = int(down_and_distance[1])
+        distance = int(re.search('and (\d{1,2}\)', down_and_distance).group(1)
+        description = re.search('\(\d\w{2} and \d{1,2}\) (.*)', row.text).group(2)
+        drive_cells = row.parent.parent.parent.findPreviousSibling().findAll('td')
+        team_slug = slugify(cells[2].contents[0])
+        try:
+            team = CollegeYear.objects.get(season=game.season, college__slug=slug)
+        except:
+            team = CollegeYear.objects.get(season=game.season, college_drive_slug=str(cells[2].contents[0]))
+        drive_number = int(cells[0].find("a").contents[0])
+        drive = GameDrive.objects.get(drive=drive_number, team=team, game=game)
+        quarter = int(cells[1].contents[0])
+        try:
+            play, created = GamePlay.objects.get_or_create(game=game, offensive_team=CollegeYear, drive=drive_number, \
+                    quarter=quarter, description=description, down=down, distance=distance)
+        except:
+            print "Could not save play &s, %s, %s" % (description, game, drive_number)
+
 def game_scores_loader(game):
     contents = urllib.urlopen(game.get_ncaa_scoring_url().strip()).read()
     soup = BeautifulSoup(contents)
