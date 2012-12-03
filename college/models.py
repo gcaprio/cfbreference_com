@@ -516,6 +516,18 @@ class GameDrive(models.Model):
     def __unicode__(self):
         return "%s: %s drive %s" % (self.game, self.team, self.drive)
 
+class GamePlay(models.Model):
+    game = models.ForeignKey(Game)
+    offensive_team = models.ForeignKey(CollegeYear)
+    drive = models.ForeignKey(GameDrive)
+    quarter = models.PositiveSmallIntegerField()
+    description = models.TextField()
+    down = models.IntegerField()
+    distance = models.IntegerField()
+
+    def __unicode__(self):
+        return "%s: %s: %s" % (self.game, self.offensive_team, self.description)
+
 class GameDriveSeason(models.Model):
     season = models.IntegerField()
     team = models.ForeignKey(CollegeYear)
