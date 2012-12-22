@@ -519,7 +519,7 @@ class GameDrive(models.Model):
 class GamePlay(models.Model):
     game = models.ForeignKey(Game)
     offensive_team = models.ForeignKey(CollegeYear)
-    drive = models.ForeignKey(GameDrive)
+    drive = models.ForeignKey(GameDrive, blank=True, null=True)
     quarter = models.PositiveSmallIntegerField()
     description = models.TextField()
     down = models.IntegerField()

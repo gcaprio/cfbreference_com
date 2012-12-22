@@ -382,7 +382,6 @@ def game_drive_loader(game):
     >>> game_drive_loader(game)
     """
     if game.has_drives == False:
-        print game.get_ncaa_drive_url().strip()
         contents = urllib.urlopen(game.get_ncaa_drive_url().strip()).read()
         soup = BeautifulSoup(contents)
         rows = soup.findAll('table')[1].findAll("tr")[2:] # grabbing too many rows. need to tighten.
@@ -435,7 +434,12 @@ def game_drive_loader(game):
         update_drive_outcomes(team)
 
 def game_play_loader(game):
-    contents = urllib.urlopen(game.get_play_by_play_url().strip()).read()
+    try:
+        contents = urllib.urlopen(game.get_play_by_play_url().strip()).read()
+    except AttributeError:
+        return
+    except:
+        return
     soup = BeautifulSoup(contents)
     rows = soup.findAll('li')
     for row in rows:
@@ -448,15 +452,21 @@ def game_play_loader(game):
         try:
             team = CollegeYear.objects.get(season=game.season, college__slug=slug)
         except:
-            team = CollegeYear.objects.get(season=game.season, college__drive_slug=str(drive_cells[2].contents[0]))
+            try:
+                team = CollegeYear.objects.get(season=game.season, college__drive_slug=str(drive_cells[2].contents[0]))
+            except:
+                return
         drive_number = int(drive_cells[0].find("a").contents[0])
-        drive = GameDrive.objects.get(drive=drive_number, team=team, game=game)
-        quarter = int(drive_cells[1].contents[0])
         try:
-            play, created = GamePlay.objects.get_or_create(game=game, offensive_team=team, drive=drive, \
-                    quarter=quarter, description=description, down=down, distance=distance)
+            drive = GameDrive.objects.get(drive=drive_number, team=team, game=game)
         except:
-            print "Could not save play %s, %s, %s" % (description, game)
+            drive = None
+        quarter = int(drive_cells[1].contents[0])
+        # try:
+        play, created = GamePlay.objects.get_or_create(game=game, offensive_team=team, drive=drive, \
+                    quarter=quarter, description=description, down=down, distance=distance)
+        # except:
+            # print "Could not save play %s, %s, %s" % (description, game, team)
 
 def game_scores_loader(game):
     contents = urllib.urlopen(game.get_ncaa_scoring_url().strip()).read()
