@@ -1,4 +1,5 @@
 import urllib
+import re
 import time
 from BeautifulSoup import BeautifulSoup
 from college.models import *
@@ -101,6 +102,7 @@ def game_updater(year, teams, week, nostats=False):
                         g.has_player_stats = True
                         game_drive_loader(g)
                         g.has_drives = True
+                        game_play_loader(g)
                 else:
                     # make sure ncaa_xml attribute is set to null, not empty string
                     g.ncaa_xml = None
@@ -435,26 +437,26 @@ def game_drive_loader(game):
 def game_play_loader(game):
     contents = urllib.urlopen(game.get_play_by_play_url().strip()).read()
     soup = BeautifulSoup(contents)
-    rows = soup.finaAll('li')
+    rows = soup.findAll('li')
     for row in rows:
         down_and_distance = re.search('\A\(.{8,11}\)', row.text).group(0)
         down = int(down_and_distance[1])
-        distance = int(re.search('and (\d{1,2}\)', down_and_distance).group(1)
-        description = re.search('\(\d\w{2} and \d{1,2}\) (.*)', row.text).group(2)
+        distance = int(re.search('and (\d{1,2})', down_and_distance).group(1))
+        description = re.search('\(\d\w{2} and \d{1,2}\) (.*)', row.text).group(1)
         drive_cells = row.parent.parent.parent.findPreviousSibling().findAll('td')
-        team_slug = slugify(cells[2].contents[0])
+        team_slug = slugify(drive_cells[2].contents[0])
         try:
             team = CollegeYear.objects.get(season=game.season, college__slug=slug)
         except:
-            team = CollegeYear.objects.get(season=game.season, college_drive_slug=str(cells[2].contents[0]))
-        drive_number = int(cells[0].find("a").contents[0])
+            team = CollegeYear.objects.get(season=game.season, college__drive_slug=str(drive_cells[2].contents[0]))
+        drive_number = int(drive_cells[0].find("a").contents[0])
         drive = GameDrive.objects.get(drive=drive_number, team=team, game=game)
-        quarter = int(cells[1].contents[0])
+        quarter = int(drive_cells[1].contents[0])
         try:
-            play, created = GamePlay.objects.get_or_create(game=game, offensive_team=CollegeYear, drive=drive_number, \
+            play, created = GamePlay.objects.get_or_create(game=game, offensive_team=team, drive=drive, \
                     quarter=quarter, description=description, down=down, distance=distance)
         except:
-            print "Could not save play &s, %s, %s" % (description, game, drive_number)
+            print "Could not save play %s, %s, %s" % (description, game)
 
 def game_scores_loader(game):
     contents = urllib.urlopen(game.get_ncaa_scoring_url().strip()).read()
