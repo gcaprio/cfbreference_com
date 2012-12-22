@@ -96,13 +96,10 @@ def game_updater(year, teams, week, nostats=False):
                     g.ncaa_xml = game_file.split('.xml')[0].strip()
                     games.append(g)
                     if not nostats:
-                        load_ncaa_game_xml(g)
-                        g.has_stats = True
-                        player_game_stats(g)
-                        g.has_player_stats = True
-                        game_drive_loader(g)
-                        g.has_drives = True
-                        game_play_loader(g)
+                        g.has_stats = load_ncaa_game_xml(g)
+                        g.has_player_stats = player_game_stats(g)
+                        g.has_drives = game_drive_loader(g)
+                        g.has_plays = game_play_loader(g)
                 else:
                     # make sure ncaa_xml attribute is set to null, not empty string
                     g.ncaa_xml = None
@@ -361,18 +358,12 @@ def load_ncaa_game_xml(game):
 
             visiting_defense.save()
             print "Visiting Defense: %s" % visiting_defense
-
-            game.has_stats = True
-            game.save()
-            game_v.has_stats = True
-            game_v.save()
-            print "================================\n"
+            
+            return True
 
     except:
         print str(game.id) + ": Could not find game between %s and %s on %s" % (game.team1.college.name, game.team2.college.name, game.date)
-        game.ncaa_xml = None
-        game.save()
-        raise
+        return False
 
 def game_drive_loader(game):
     """
@@ -429,9 +420,8 @@ def game_drive_loader(game):
                 d, created = GameDrive.objects.get_or_create(game=game, drive=drive, team=team, quarter=quarter,start_how=str(start_how), start_time=start_time, start_position=start_position, start_side=start_side, end_result=end_result, end_time=end_time, end_position=end_position, end_side=end_side, plays=plays, yards=yards,time_of_possession=time_of_possession, season=game.season)
             except:
                 print "Could not save drive %s, %s, %s" % (drive, game, team)
-        game.has_drives = True
-        game.save()
         update_drive_outcomes(team)
+        return True
 
 def game_play_loader(game):
     try:
@@ -443,30 +433,34 @@ def game_play_loader(game):
     soup = BeautifulSoup(contents)
     rows = soup.findAll('li')
     for row in rows:
-        down_and_distance = re.search('\A\(.{8,11}\)', row.text).group(0)
-        down = int(down_and_distance[1])
-        distance = int(re.search('and (\d{1,2})', down_and_distance).group(1))
-        description = re.search('\(\d\w{2} and \d{1,2}\) (.*)', row.text).group(1)
-        drive_cells = row.parent.parent.parent.findPreviousSibling().findAll('td')
-        team_slug = slugify(drive_cells[2].contents[0])
         try:
-            team = CollegeYear.objects.get(season=game.season, college__slug=slug)
-        except:
+            down_and_distance = re.search('\A\(.{8,11}\)', row.text).group(0)
+            down = int(down_and_distance[1])
+            distance = int(re.search('and (\d{1,2})', down_and_distance).group(1))
+            description = re.search('\(\d\w{2} and \d{1,2}\) (.*)', row.text).group(1)
+            drive_cells = row.parent.parent.parent.findPreviousSibling().findAll('td')
+            team_slug = slugify(drive_cells[2].contents[0])
             try:
-                team = CollegeYear.objects.get(season=game.season, college__drive_slug=str(drive_cells[2].contents[0]))
+                team = CollegeYear.objects.get(season=game.season, college__slug=slug)
             except:
-                return
-        drive_number = int(drive_cells[0].find("a").contents[0])
-        try:
-            drive = GameDrive.objects.get(drive=drive_number, team=team, game=game)
+                try:
+                    team = CollegeYear.objects.get(season=game.season, college__drive_slug=str(drive_cells[2].contents[0]))
+                except:
+                    return
+            drive_number = int(drive_cells[0].find("a").contents[0])
+            try:
+                drive = GameDrive.objects.get(drive=drive_number, team=team, game=game)
+            except:
+                drive = None
+            quarter = int(drive_cells[1].contents[0])
+            # try:
+            play, created = GamePlay.objects.get_or_create(game=game, offensive_team=team, drive=drive, \
+                        quarter=quarter, description=description, down=down, distance=distance)
+            # except:
+                # print "Could not save play %s, %s, %s" % (description, game, team)
         except:
-            drive = None
-        quarter = int(drive_cells[1].contents[0])
-        # try:
-        play, created = GamePlay.objects.get_or_create(game=game, offensive_team=team, drive=drive, \
-                    quarter=quarter, description=description, down=down, distance=distance)
-        # except:
-            # print "Could not save play %s, %s, %s" % (description, game, team)
+            return False
+    return True
 
 def game_scores_loader(game):
     contents = urllib.urlopen(game.get_ncaa_scoring_url().strip()).read()
@@ -614,6 +608,4 @@ def player_game_stats(game):
                         saf = int(p.find("scoring").find("saf").contents[0])
                         pts = int(p.find("scoring").find("pts").contents[0])
                         ps, created = PlayerScoring.objects.get_or_create(player=player, game=game, td=s_td, fg_att=fg_att, fg_made=fg_made, pat_att=pat_att, pat_made=pat_made, two_pt_att=tpt_att, two_pt_made=tpt_made,def_pat_att=d_pat_att, def_pat_made=d_pat_made, def_two_pt_att=d_tpt_att, def_two_pt_made=d_tpt_made, safeties=saf, points=pts)
-        game.has_player_stats = True
-        game.save()
-
+        return True
