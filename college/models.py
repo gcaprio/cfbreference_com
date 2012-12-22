@@ -423,6 +423,7 @@ class Game(models.Model):
     has_drives = models.BooleanField()
     has_stats = models.BooleanField()
     has_player_stats = models.BooleanField()
+    has_plays = models.BooleanField()
     is_conference_game = models.BooleanField()
     is_bowl_game = models.BooleanField()
     bowl_game = models.ForeignKey(BowlGame, null=True, blank=True)
