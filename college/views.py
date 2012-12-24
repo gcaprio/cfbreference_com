@@ -372,6 +372,21 @@ def game_drive(request, team1, team2, year, month, day):
     drives = game.gamedrive_set.all()
     return render_to_response('college/game_drives.html', {'team_1': team_1, 'team_2': team_2, 'game': game, 'drives': drives })
 
+def game_plays(request, team1, team2, year, month, day):
+    team_year = calculate_team_year(year, month)
+    team_1 = get_object_or_404(CollegeYear, college__slug=team1, season=team_year)
+    try:
+        team_2 = CollegeYear.objects.get(college__slug=team2, season=team_year)
+        if team_1 == team_2:
+            team_2 = CollegeYear.objects.none()
+    except:
+        team_2 = CollegeYear.objects.none()
+
+    date = datetime.date(int(year), int(month), int(day))
+    game = get_object_or_404(Game, team1=team_1, team2=team_2, date=date)
+    plays = game.gameplay_set.all()
+    return render_to_response('college/game_plays.html', {'team_1': team_1, 'team_2': team_2, 'game': game, 'plays': plays })
+
 def game_index(request):
     pass # do calendar-based view here
 
