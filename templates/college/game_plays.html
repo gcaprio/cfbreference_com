@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load humanize %}
+
+{% block title %}College Football Reference: {{ team_1.name }} vs. {{ team_2.name }} - Plays{% endblock %}
+
+{% block content %}
+
+{% if game %}
+
+<h3><a href="{{ team_1.get_absolute_url }}">{{ team_1.college.name }}</a> vs. <a href="{{ team_2.get_absolute_url }}">{{ team_2.college.name }}</a>: {{ game.season }}</h3>
+(<a href="{{ game.get_matchup_url }}">See all games between these teams</a>)
+
+<table>
+  <th>Season</th><th>Date</th><th>Outcome</th><th>Location</th>{% if game.attendance %}<th>Attendance</th>{% endif %}
+  <tr><td>{{ game.season }}</td><td>{{ game.date|date:"N d, Y" }}</td><td>{{ game.get_t1_result_display }}, {{ game.team1_score }}-{{ game.team2_score }}</td><td>{{ game.get_t1_game_type_display }} {% if game.site %}({{ game.site }}){% endif %}</td>{% if game.attendance %}<td>{{ game.attendance|intcomma }}</td>{% endif %}</tr>
+
+</table>
+
+{% if plays %}
+<h4>{{ team_1.name }} Play Details</h4>
+<table>
+  <th>Game Drive</th><th>Quarter</th><th>Down</th><th>Distance</th><th>Description</th>
+  {% for play in plays %}
+  {% if "drive start" in play.description %}
+   <tr></tr>
+  {% endif %}
+  <tr><td>{{ play.drive.drive }}</td><td>{{ play.quarter }}</td><td>{{ play.down }}</td><td>{{ play.distance }}</td><td>{% if "drive start" in play.description %}<strong>{{ play.description }}</strong>{% else %}{{ play.description }}{% endif %}</td></tr>
+  {% endfor %}
+</table>
+
+<br />
+{% endif %}
+
+(<a href="{{ game.get_reverse_url }}plays/">see {{ team_2.college.name }}'s plays</a> for this game)
+
+
+{% else %}
+
+No game could be found.
+
+{% endif %}
+
+{% endblock %}
