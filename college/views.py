@@ -196,9 +196,11 @@ def team_rankings_season(request, team, season, week=None):
     if latest_rankings:
         best = latest_rankings.order_by('rank')[0]
         worst = latest_rankings.order_by('-rank')[0]
+        average_ranking = float(latest_rankings.aggregate(Avg('rank'))['rank__avg'])
     else:
         best, worst = Ranking.objects.none(), Ranking.objects.none()
-    return render_to_response('college/team_rankings_season.html', {'season_record': cy, 'latest_rankings': latest_rankings, 'latest_week': latest_week, 'other_weeks': other_weeks, 'best': best, 'worst': worst})
+        average_ranking = None
+    return render_to_response('college/team_rankings_season.html', {'season_record': cy, 'latest_rankings': latest_rankings, 'latest_week': latest_week, 'other_weeks': other_weeks, 'best': best, 'worst': worst, 'average_ranking': average_ranking})
 
 @cache_control(must_revalidate=True, max_age=12000)
 def team_ranking_detail(request, team, season, rankingtype):
