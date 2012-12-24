@@ -384,7 +384,7 @@ def game_plays(request, team1, team2, year, month, day):
 
     date = datetime.date(int(year), int(month), int(day))
     game = get_object_or_404(Game, team1=team_1, team2=team_2, date=date)
-    plays = game.gameplay_set.all().order_by('drive_id, id')
+    plays = game.gameplay_set.all().order_by('drive', 'id')
     return render_to_response('college/game_plays.html', {'team_1': team_1, 'team_2': team_2, 'game': game, 'plays': plays })
 
 def game_index(request):
