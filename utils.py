@@ -332,7 +332,12 @@ def remove_bad_player_stat_instances(season):
     objs = [PlayerGame, PlayerRush, PlayerPass, PlayerReceiving, PlayerScoring, PlayerTackle, PlayerTacklesLoss, PlayerPassDefense, PlayerFumble, PlayerReturn]
     for obj in objs:
         obj.objects.filter(game__season=season).select_related(depth=1).exclude(game__team1=F('player__team')).delete()
-    
+
+def update_player_games_played(season):
+    players = Player.objects.filter(season=season)
+    for player in players:
+        player.games_played = player.playergame_set.all().count()
+        player.save()
 
 def populate_drive_slugs(season='2012', division='2'):
     from django.db import connection, transaction
